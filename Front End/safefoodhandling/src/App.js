@@ -16,6 +16,8 @@ function App() {
 
         <h2>This Prince</h2>
 
+        <h2>This is Sonika</h2>
+
       <h1>write a statement</h1>
 
 
