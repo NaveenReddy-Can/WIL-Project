@@ -11,9 +11,7 @@ function App() {
         </p>
         <h1> SAFE FOOD HANDLING WEBSITE COMMING SOON...</h1>
 
-        <h2> this is akhil</h2>
-       
-        <h2>This prince</h2>
+      <h1>write a statement</h1>
 
         <a
           className="App-link"
