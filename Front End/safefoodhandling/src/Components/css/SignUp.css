@@ -1,0 +1,27 @@
+.sign .Signup-fields label{
+display: inline-block;
+text-align: right;
+font-weight: bold;
+}
+.signupbtn{
+    padding: 10px 30px 10px;
+    background-color: #D9D9D9;
+    border-radius: 25px;
+    font-size: small;
+    font-weight: bold;
+}
+
+input{
+    height: 30px;
+    width: 250px;
+    
+    
+}
+.checkbox{
+    text-align: left;
+
+}
+.sign .checkbx input{
+height: 10px;
+width: 10px;
+}
