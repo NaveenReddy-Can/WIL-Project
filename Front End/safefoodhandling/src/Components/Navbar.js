@@ -1,26 +1,7 @@
 import React from 'react';
 import './css/navbar.css';
 import Dotcom from '../Assets/Images/Dotcomlogo.png';
-import SignUp from './SignUp';
-import { AppBar, Toolbar, styled } from "@mui/material";
-import { NavLink } from "react-router-dom";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-const Header = styled(AppBar)`
-  background: #7918b5;
-  margin-top: 10px;
-  border-radius: 1%;
-  border-style: dotted;
-  font-family: serif;
-`;
 
-const Tabs = styled(NavLink)`
-  color: #ffffff;
-  margin-right: 80px;
-  margin-left: 150px;
-  text-decoration: none;
-  font-size: 22px;
-  font-family: serif;
-`;
 
 const NavBar = () => {
     return (
@@ -34,7 +15,7 @@ const NavBar = () => {
                 <li className="navbar-item" ><a href=" ">PROFILE</a></li>
 
                 <div className='nav-buttons'>
-                    <button className='button1' type='submit' > Login </button>
+                    <button className='button1' type='submit' ><a href=" /login" >login </a> </button>
                     <button type='submit' > <a href=" /signup" >Sign Up  </a></button >
 
                 </div>
