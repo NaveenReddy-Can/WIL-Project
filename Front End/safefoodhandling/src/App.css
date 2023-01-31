@@ -11,9 +11,13 @@
 
 
 .App-header {
-
+  text-align: right;
   color: white;
-}
+  font-weight: 501;
 
+}
+.App-header h4 {
+text-align: center;
+}
 
 
