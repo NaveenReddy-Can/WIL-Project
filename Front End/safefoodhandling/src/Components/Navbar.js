@@ -1,10 +1,15 @@
 import React from 'react';
 import './css/navbar.css';
 import Dotcom from '../Assets/Images/Dotcomlogo.png';
-
+import { useAuth0 } from '@auth0/auth0-react';
 
 const NavBar = () => {
+    const { loginWithRedirect } = useAuth0();
+    const { logout } = useAuth0();
+    const { user, isAuthenticated, isLoading } = useAuth0();
+
     return (
+
         <div className="navbar" >
             <img src={Dotcom} alt='navlgo' />
 
@@ -12,12 +17,20 @@ const NavBar = () => {
                 <li className="navbar-item" > <a href=" ">HOME</a></li>
                 <li className="navbar-item" ><a href=" ">COURSES</a></li>
                 <li className="navbar-item" ><a href=" ">MY LEARNING</a></li>
-                <li className="navbar-item" ><a href=" ">PROFILE</a></li>
+                <li className="navbar-item" ><a href="/Profile">PROFILE</a></li>
 
                 <div className='nav-buttons'>
-                    <button className='button1' type='submit' ><a href=" /login" >login </a> </button>
-                    <button type='submit' > <a href=" /signup" >Sign Up  </a></button >
 
+                    {isAuthenticated ? (
+
+                        <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+                            Log Out
+                        </button>
+
+                    ) : (
+                        <button onClick={() => loginWithRedirect()}>Log In</button>
+
+                    )}
                 </div>
 
             </ul>
