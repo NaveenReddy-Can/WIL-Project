@@ -14,8 +14,8 @@ const NavBar = () => {
             <img src={Dotcom} alt='navlgo' />
 
             <ul className="navbar-list">
-                <li className="navbar-item" > <a href=" ">HOME</a></li>
-                <li className="navbar-item" ><a href=" ">COURSES</a></li>
+                <li className="navbar-item" > <a href="/Home ">HOME</a></li>
+                <li className="navbar-item" ><a href="/Courses ">COURSES</a></li>
                 <li className="navbar-item" ><a href=" ">MY LEARNING</a></li>
                 <li className="navbar-item" ><a href="/Profile">PROFILE</a></li>
 
