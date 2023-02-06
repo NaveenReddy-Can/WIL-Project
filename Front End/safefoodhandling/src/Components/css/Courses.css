@@ -1,0 +1,26 @@
+.video-grid h2 {
+    
+ text-align: center;   
+}
+.video-grid{
+        width: 1490px;
+        height: 1100px;
+        display: flex;
+        color:black;
+        background-color: white;
+
+      }
+
+      .video-row {
+        margin-left: 40px;
+        margin-top: 100px;
+        width: 25%;
+        height: 200px;
+      }
+      
+      h2{
+        text-align: center;
+      }
+      
+      
+
