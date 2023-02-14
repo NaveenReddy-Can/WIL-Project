@@ -1,0 +1,35 @@
+.brand-gallery {
+  width: 1500px;
+  height: 1900px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+ /* overflow-y:scroll;*/
+}
+.brand-images{
+  display: flex;
+  width: 1500px;
+  height: 300px;
+  
+}
+.brand-image{
+width: 100%;
+}
+.brand-text{
+  
+  font-weight: 700;
+}
+.popular-videos{
+  margin-top: 10px;
+  height: 400px;
+  color:black;
+  background-color: white;
+  overflow-y:scroll;
+}
+.videos-grid{
+  margin-top: 0px;
+  padding-top: 0%;
+  
+}
+
+

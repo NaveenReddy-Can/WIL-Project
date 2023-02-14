@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Components/Login';
 import Home from './Components/Home';
 import Courses from './Components/Courses';
+import Quiz3 from './Components/Quizzes/Quiz3';
 /* main application in the project */
 /* Url navigations are declared here*/
 

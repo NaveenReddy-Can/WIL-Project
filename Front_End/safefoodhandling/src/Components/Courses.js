@@ -1,5 +1,12 @@
 import React from 'react';
 import './css/Courses.css';
+import Quiz1 from './Quizzes/Quiz1';
+import Quiz2 from './Quizzes/Quiz2';
+import Quiz3 from './Quizzes/Quiz3';
+import Quiz4 from './Quizzes/Quiz4';
+import React1, { useState } from 'react';
+import Buttons from './Quizzes/Buttons';
+
 
 const Courses = () => {
     return (
@@ -83,7 +90,11 @@ const Courses = () => {
                     </div>
                 </div>
             </div>
-        </div>
+
+            <Buttons />
+
+        </div >
     );
 };
+
 export default Courses;
