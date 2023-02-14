@@ -21,3 +21,62 @@ text-align: center;
 }
 
 
+.quiz-container {
+  display: flex;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.question-container
+{
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+  text-align: center;
+  color: black;
+}
+.result-container {
+  background-color: white;
+  padding: 30px;
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+  text-align: center;
+}
+button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+}
+.CloseButton{
+  background-color: red;
+}
+.SubmitQuizButton{
+  background-color: orange;
+}
+.QButtons{
+  background-color: #94b619;
+  font-weight: 700;
+  
+}
+.QuizButtonComponent{
+  display: block;
+  align-items: first baseline;
+  font-weight: 700;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
