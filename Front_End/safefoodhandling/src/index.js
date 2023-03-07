@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
 import Footer from './footer';
+import NavBar from './Components/Navbar';
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
@@ -20,9 +21,15 @@ root.render(
       redirect_uri: window.location.origin
     }}
   >
-    <App />
+    <div className='Navbar'>
+      <NavBar />
 
-    <Footer />
+    </div>
+    <div className='MainBody'>
+      <App />
+
+      <Footer />
+    </div>
   </Auth0Provider>
 
 );

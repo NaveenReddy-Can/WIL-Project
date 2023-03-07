@@ -4,6 +4,8 @@
     vertical-align: top;
     position: initial;
     margin-top: 60px;
+    margin-left: 13%;
+    background-color:#662727 ;
     
 }
 .navbar img{
@@ -35,9 +37,9 @@ a{
     margin-left: 65px;
 
 }
-.nav-buttons button {
+.nav-buttons .LogButton {
     padding: 10px 30px 10px;
-    background-color: #D9D9D9;
+    background-color: #fff8f8;
     border-radius: 25px;
     font-size: small;
     font-weight: bold;

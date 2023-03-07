@@ -1,0 +1,377 @@
+/* unit button styling*/
+.UnitButton{
+    
+    background-color: rgb(107, 0, 50);
+    border: none;
+    color: white;
+    padding: 12px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.UnitButton:hover {
+    background-color: #970732;
+  }
+  
+  .UnitButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+ .UnitButton:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .UnitButton:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  
+  .UnitButton:active:before {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+/*assesment button styling */
+
+.AssesmentButton{
+    
+    background-color: rgb(139, 126, 5);
+    border: none;
+    color: white;
+    padding: 12px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.AssesmentButton:hover {
+    background-color: #798d1e;
+  }
+  
+  .AssesmentButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .AssesmentButton:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .AssesmentButton:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  
+  .AssesmentButton:active:before {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+
+
+/*Change Button styling*/
+.ChangeProfileButton{
+    
+    background-color: rgb(37, 101, 138);
+    border: none;
+    color: white;
+    padding: 12px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.ChangeProfileButton:hover {
+    background-color: #003e77;
+  }
+  
+  .ChangeProfileButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .ChangeProfileButton:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .ChangeProfileButton:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  
+  .ChangeProfileButton:active:before {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+    
+
+/*Next Button styling*/
+.NextButton{
+    background-color: rgb(196, 49, 4);
+    border: none;
+    color: white;
+    padding: 12px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.NextButton:hover {
+    background-color: #db1a14;
+  }
+  
+  .NextButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .NextButton:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .NextButton:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  
+  .NextButton:active:before {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+
+/*88888888888888888888888888888888888888888888888888888888888*/
+.QuizButton{
+    background-color: hsl(234, 80%, 20%);
+    border: none;
+    color: white;
+    padding: 12px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.QuizButton:hover {
+    background-color: hsl(234, 100%, 29%);
+  }
+  
+  .QuizButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .QuizButton:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .QuizButton:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  
+  .QuizButton:active:before {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  
+.DownloadCertificate{
+    background-color: chartreuse;
+    border-radius: 30px;
+}
+div{
+    font-size: x-large;
+    font-weight:700 ;
+    
+}
+ul li button{
+    font-size: x-large;
+    font-weight:700 ;
+    
+}
+ul{
+    list-style: none;
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .button:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .button:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  
+  .button:active:before {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  
+  .button-sound {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .button-sound:active:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.3;
+    pointer-events: none;
+    animation: sound 0.4s ease-out forwards;
+  }
+  div{
+    color: white;
+    background-color: black;
+    
+  }
+  @keyframes sound {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+    }
+  }
+  .container {
+    position: relative;
+   
+    overflow: hidden;
+    padding-top: 35%; /* 4:3 Aspect Ratio */
+  }
+  
+  .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
