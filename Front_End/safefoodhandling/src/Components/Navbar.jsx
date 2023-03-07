@@ -23,12 +23,12 @@ const NavBar = () => {
 
                     {isAuthenticated ? (
 
-                        <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+                        <button className='LogButton' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
                             Log Out
                         </button>
 
                     ) : (
-                        <button onClick={() => loginWithRedirect()}>Log In</button>
+                        <button Classname='LogButton' onClick={() => loginWithRedirect()}>Log In</button>
 
                     )}
                 </div>

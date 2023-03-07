@@ -115,7 +115,7 @@
     cursor: pointer;
   }
   .button {
-    background-color: #4CAF50;
+    background-color: #030374;
     border: none;
     color: white;
     padding: 12px 40px;
@@ -131,8 +131,7 @@
   }
   
   .button:hover {
-    background-color: #3e8e41;
-  }
+    background-color: #030374;}
   
   .button:active {
     transform: translateY(2px);

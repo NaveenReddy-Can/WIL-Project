@@ -40,7 +40,7 @@ const Footer = () => {
                 <button onClick={handleClick} style={{ backgroundColor: '#722F2F', color: 'White', textAlign: 'center', padding: '8px', fontWeight: 'bold', marginLeft: '1400px' }}>  Get Help  </button>
                 {showComponent && <Modal onClose={handleCloseModal}> <Contactus /> </Modal>}
             </>
-        </div>
+        </div >
     );
 };
 

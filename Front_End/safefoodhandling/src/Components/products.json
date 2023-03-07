@@ -1,0 +1,137 @@
+[
+    {
+        "id": 1,
+        "name": "Course 1",
+        "description": "Description of Course 1.",
+        "price": "$10",
+        "Author": "Naveen",
+        "image": "",
+        "content": "Safe food handling, Food rotation, Safe knife handling, Raw Meat, Cummulative quiz, Assesments"
+    },
+    {
+        "id": 2,
+        "name": "Course 2",
+        "description": "Description of Course 2.",
+        "price": "$20",
+        "Author": "Naveen",
+        "image": "https://via.placeholder.com/150x150",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "id": 3,
+        "name": "Course 3",
+        "description": "Description of Course 3.",
+        "price": "$30",
+        "Author": "Naveen",
+        "image": "https://via.placeholder.com/150x150",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "id": 4,
+        "name": "Course 4",
+        "description": "Description of Course 4.",
+        "price": "$40",
+        "Author": "Naveen",
+        "image": "https://via.placeholder.com/150x150",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "id": 5,
+        "name": "Course 5",
+        "description": "Description of Course 5.",
+        "price": "$50",
+        "Author": "Naveen",
+        "image": "https://via.placeholder.com/150x150",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "id": 6,
+        "name": "Course 6",
+        "description": "Description of Course 6.",
+        "price": "$60",
+        "Author": "Naveen",
+        "image": "https://via.placeholder.com/150x150",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "id": 7,
+        "name": "Course 7",
+        "description": "Description of Course 7.",
+        "price": "$70",
+        "Author": "Naveen",
+        "image": "https://via.placeholder.com/150x150",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "id": 8,
+        "name": "Course 8",
+        "description": "Description of Course 8.",
+        "price": "$80",
+        "Author": "Naveen",
+        "image": "https://via.placeholder.com/150x150",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "id": 9,
+        "name": "Course 9",
+        "description": "Description of Course 9.",
+        "price": "$90",
+        "Author": "Naveen",
+        "image": "https://via.placeholder.com/150x150",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "id": 10,
+        "name": "Course 10",
+        "description": "Description of Course 10.",
+        "price": "$100",
+        "Author": "Naveen",
+        "image": "https://via.placeholder.com/150x150",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "id": 11,
+        "name": "Course 11",
+        "description": "Description of Course 11.",
+        "price": "$110",
+        "Author": "Naveen",
+        "image": "https://via.placeholder.com/150x150",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "id": 12,
+        "name": "Course 12",
+        "description": "Description of Course 12.",
+        "price": "$120",
+        "Author": "Naveen",
+        "image": "https://via.placeholder.com/150x150",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "id": 13,
+        "name": "Course 13",
+        "description": "Description of Course 13.",
+        "price": "$130",
+        "Author": "Naveen",
+        "image": "https://via.placeholder.com/150x150",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "id": 14,
+        "name": "Course 14",
+        "description": "Description of Course 14.",
+        "price": "$140",
+        "Author": "Naveen",
+        "image": "https://via.placeholder.com/150x150",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "id": 15,
+        "name": "Course 15",
+        "description": "Description of Course 14.",
+        "price": "$10",
+        "Author": "Naveen",
+        "image": "https://via.placeholder.com/150x150",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    }
+]

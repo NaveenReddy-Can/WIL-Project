@@ -6,12 +6,15 @@ import Quiz3 from './Quizzes/Quiz3';
 import Quiz4 from './Quizzes/Quiz4';
 import React1, { useState } from 'react';
 import Buttons from './Quizzes/Buttons';
+import CourseDisplay from './CoursesDisplay';
+import CourseModule1 from './CourseModule1';
 
 
 const Courses = () => {
     return (
 
-        <div>
+        <div className='OutGrid'>
+
             <h2>Courses On Trending </h2>
             <div className="video-grid">
 
@@ -92,7 +95,8 @@ const Courses = () => {
             </div>
 
             <Buttons />
-
+            <CourseDisplay />
+            <CourseModule1 />
         </div >
     );
 };
