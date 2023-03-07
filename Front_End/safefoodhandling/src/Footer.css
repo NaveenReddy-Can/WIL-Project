@@ -1,0 +1,38 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links ul {
+    padding-right: 100px;
+    list-style: none;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.get-help {
+    background-color: #722F2F;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+    margin-left: auto;
+}
+img{
+     height: '40px';
+      Width: '60px';
+     padding-left: '150px' ;
+}
