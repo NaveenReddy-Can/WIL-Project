@@ -1,0 +1,199 @@
+
+
+.quiz-container {
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .question-container
+  {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+    text-align: center;
+    color: black;
+  }
+  .result-container {
+    background-color: white;
+    padding: 30px;
+    height: 400px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+    text-align: center;
+  }
+  
+  .CloseButton{
+    background-color: red;
+    color: aliceblue;
+  }
+  .SubmitQuizButton{
+    background-color: orange;
+    color: aliceblue;
+  }
+  .QButtons{
+    background-color: #94b619;
+    font-weight: 700;
+    
+  }
+  .QuizButtonComponent{
+    display: block;
+    align-items: first baseline;
+    font-weight: 700;
+  }
+  /*---------------------------------*/
+  /*Next Button styling*/
+.NextButton{
+    background-color: #9a16f1;
+    border: none;
+    color: white;
+    padding: 12px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.NextButton:hover {
+    background-color:#4e1772;
+  }
+  
+  .NextButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .NextButton:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .NextButton:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  
+  .NextButton:active:before {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  /****************************************************/
+  /* unit button styling*/
+.UnitButton{
+    
+    background-color: rgb(107, 0, 50);
+    border: none;
+    color: white;
+    padding: 12px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.UnitButton:hover {
+    background-color: #970732;
+  }
+  
+  .UnitButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+ .UnitButton:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .UnitButton:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  
+  .UnitButton:active:before {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  /*-----------------------*/
+  /* Close button styling*/
+ .CloseButton{
+    
+    background-color: rgb(253, 16, 16);
+    border: none;
+    color: white;
+    padding: 12px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .CloseButton:hover {
+    background-color: #530909;
+  }
+  
+  .CloseButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .CloseButton:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .CloseButton:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  
+  .CloseButton:active:before {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }

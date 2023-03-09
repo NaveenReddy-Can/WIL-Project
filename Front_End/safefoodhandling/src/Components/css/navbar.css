@@ -24,7 +24,7 @@
 .navbar-item{
     padding: 0px 60px 0px;
     height: 10px;
-  vertical-align: top;
+    vertical-align: top;
     
     
 }
@@ -37,10 +37,53 @@ a{
     margin-left: 65px;
 
 }
-.nav-buttons .LogButton {
-    padding: 10px 30px 10px;
-    background-color: #fff8f8;
-    border-radius: 25px;
-    font-size: small;
-    font-weight: bold;
+
+ /*Next Button styling*/
+ .NextButton{
+    background-color: #9a16f1;
+    border: none;
+    color: white;
+    padding: 12px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
+.NextButton:hover {
+    background-color:#4e1772;
+  }
+  
+  .NextButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .NextButton:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .NextButton:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  
+  .NextButton:active:before {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }

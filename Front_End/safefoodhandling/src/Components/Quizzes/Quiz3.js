@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import '../css/Quiz.css';
+
 
 
 function Quiz3() {
@@ -6,12 +8,51 @@ function Quiz3() {
     const [showModal, setShowModal] = useState(false);
     const [score, setScore] = useState(0);
 
-
     const questions = [
 
         {
 
-            text: "1.Bacteria is everywhere.  ",
+            text: "1.If your knife is falling to the floor, stand back and: ",
+
+            choices: ["	Try to catch it", "	Let it fall", "Keep your hand below"],
+
+            correctAnswer: "Let it fall"
+
+        },
+
+        {
+
+            text: '2.	When getting out sharp knives you should hold them: ',
+
+            choices: ['	Pointing towards the ground ', '	With both hands', '	Catch on opposite ends'],
+
+            correctAanswer: 'Pointing towards the ground'
+
+        },
+
+        {
+
+            text: "3.	After you finish using the knife, how should you place it:",
+
+            choices: ["	Sharp edge towards our side", "	Sharp edge towards opposite side", "	No matter how you place it"],
+
+            correctAnswer: "Sharp edge towards opposite side"
+
+        },
+
+        {
+
+            text: "4.	we can send knives through the dishwasher :",
+
+            choices: ["True", "False"],
+
+            correctAnswer: "False"
+
+        },
+
+        {
+
+            text: "	5.	while carrying the knives you should indicate other people:",
 
             choices: ["True", "False"],
 
@@ -21,57 +62,17 @@ function Quiz3() {
 
         {
 
-            text: '2.Every bacterium is good for humans!',
+            text: "6.	We should sharpen our knives regularly because: ",
 
-            choices: ['True', 'False'],
+            choices: ["	It does not rust", "It can cut easily.", "Both a&b"],
 
-            correctAanswer: 'False'
-
-        },
-
-        {
-
-            text: "3.Examples of potentially hazardous food are meat, milk, poultry:",
-
-            choices: ["True", "False"],
-
-            correctAnswer: "True "
+            correctAnswer: "Both a&b"
 
         },
 
         {
 
-            text: "4.You can see bacteria with naked eyes:",
-
-            choices: ["True", "False"],
-
-            correctAnswer: "False"
-
-        },
-
-        {
-
-            text: "5.When bacteria grow, they increase in size.",
-
-            choices: ["True", "False"],
-
-            correctAnswer: "False"
-
-        },
-
-        {
-
-            text: "6.Heating the food kills the bacteria. But does it still contain the toxins? ",
-
-            choices: ["True", "False"],
-
-            correctAnswer: "True "
-
-        },
-
-        {
-
-            text: "7.temperature danger zone is between 41F to 135F:",
+            text: "7.	We have different knives for different things: ",
 
             choices: ["True", "False"],
 
@@ -80,16 +81,7 @@ function Quiz3() {
         },
         {
 
-            text: "8.It is not necessary to wash hands regularly: ",
-
-            choices: ["True", "False"],
-
-            correctAnswer: "False"
-
-        },
-        {
-
-            text: "9.It is good to store food in refrigerator.",
+            text: "8.	Knives should be sanitized after every use  ",
 
             choices: ["True", "False"],
 
@@ -98,7 +90,106 @@ function Quiz3() {
         },
         {
 
-            text: "10.Raw meet can be washed by hot water:   ",
+            text: "9.	Always keep the knives back into the stand after use:",
+
+            choices: ["True", "False"],
+
+            correctAnswer: "True"
+
+        },
+        {
+
+            text: "10.	What is the proper grip for holding a knife?        :  ",
+
+            choices: ["With fingers extended", "With fingers wrapped around the handle", "With only the fingertips touching the handle"],
+
+            correctAnswer: "With fingers wrapped around the handle"
+
+        },
+        {
+
+            text: "11.	How should you pass a knife to someone else  ",
+
+            choices: ["Handle first", "Blade first", "It doesn't matter"],
+
+            correctAnswer: "Handle first"
+
+        },
+        {
+
+            text: "12.	When cutting food, it is best to  ",
+
+            choices: ["Hold the food with your fingers", "	Use a cutting board", "Cut on any surface that is available"],
+
+            correctAnswer: "Use a cutting board"
+
+        },
+        {
+
+            text: "13.	Which of the following is NOT a good practice when using a knife? ",
+
+            choices: ["Using a dull knife", "Cutting towards yourself", "Paying attention to what you are doing"],
+
+            correctAnswer: "Cutting towards yourself"
+
+        },
+        {
+
+            text: "14.	When cleaning a knife, it is important to: ",
+
+            choices: ["Wash the blade and handle with warm soapy water", "Scrub the blade with a metal scouring pad", "Store the knife while it is still wet"],
+
+            correctAnswer: "	Wash the blade and handle with warm soapy water"
+
+        },
+        {
+
+            text: "15.	Which type of cutting motion is the safest?     ",
+
+            choices: ["A back-and-forth sawing motion", "	A chopping motion ", "A rocking motion"],
+
+            correctAnswer: "	A rocking motion"
+
+        },
+        {
+
+            text: "16.	What is the proper way to hold a knife?",
+
+            choices: ["	with your fingers wrapped around the handle", "with your fingers wrapped around the blade", "	with your thumb and forefinger gripping the base of the blade, and the other fingers wrapping around the handle"],
+
+            correctAnswer: "with your thumb and forefinger gripping the base of the blade, and the other fingers wrapping around the handle"
+
+        },
+        {
+
+            text: "17.	When using a knife, where should you position your non-knife hand?  ",
+
+            choices: ["holding the food directly in front of the knife blade", "holding the food off to the side of the knife blade", "	holding the food above the knife blade"],
+
+            correctAnswer: "holding the food off to the side of the knife blade"
+
+        },
+        {
+
+            text: "18.	Which of the following is a safe way to transport knives? ",
+
+            choices: ["in your pocket or waistband", "	in a knife block or sheath", "	loose in a backpack or bag"],
+
+            correctAnswer: "in a knife block or sheath"
+
+        },
+        {
+
+            text: "19.	When sharpening a knife, you should:  ",
+
+            choices: ["sharpen both sides of the blade evenly", "only sharpen one side of the blade", "use a dull knife to sharpen a sharp one"],
+
+            correctAnswer: "sharpen both sides of the blade evenly"
+
+        },
+        {
+
+            text: "20.	It's safe to use a knife to open packages or cut through materials other than food.",
 
             choices: ["True", "False"],
 
@@ -107,99 +198,29 @@ function Quiz3() {
         },
         {
 
-            text: "11. What is listeria? ",
+            text: "21.	Which of the following should you do if you cut yourself while using a knife?   ",
 
-            choices: ["A brand of mouthwash ", "A strain of bacteria ", "A strain of virus ", "A strain of fungus "],
+            choices: ["	rinse the wound with cold water and apply pressure ", " continue working and hope the bleeding stops on its own ", "ignore the cut and keep using the knife"],
 
-            correctAnswer: "A strain of bacteria"
-
-        },
-        {
-
-            text: "12. Where is listeria found? ",
-
-            choices: ["Soil", "Animal feed ", "Water ", "All the above "],
-
-            correctAnswer: "All the above "
+            correctAnswer: "rinse the wound with cold water and apply pressure "
 
         },
+
         {
 
-            text: "13. foods are most often contaminated with listeria? ",
+            text: "22.	Which of the following is a safe cutting technique?     ",
 
-            choices: ["pasteurized milk products ", "frozen vegetables ", "deli meats", "canned soups"],
+            choices: ["chopping with the tip of the blade ", "rocking the blade back and forth to chop ", "using a sawing motion to cut through food"],
 
-            correctAnswer: "deli meats"
+            correctAnswer: "rocking the blade back and forth to chop"
 
         },
+
         {
 
-            text: "14. Who is most at risk from listeria? ",
+            text: "23.	can we throw knives in the air to pass it other person?  ",
 
-            choices: ["pregnant woman", "people over age 60", "people with diabetes", " all the above"],
-
-            correctAnswer: " all the above"
-
-        },
-        {
-
-            text: "15.Why is listeria so deadly?",
-
-            choices: ["Attacks brain and nervous system ", "Causes cancer ", "Contains deadly poison ", "Highly contagious "],
-
-            correctAnswer: "Attacks brain and nervous system "
-
-        },
-        {
-
-            text: "16.Why are pregnant women at high risk from listeria? ",
-
-            choices: ["High risk of listeriosis ", "Eat more listeria contaminated food ", "Miscarriage or pre birth ", "All the above "],
-
-            correctAnswer: "High risk of listeriosis"
-
-        },
-        {
-
-            text: "17.common symptoms of listeriosis? ",
-
-            choices: ["Fever and muscle aches ", "Loss of balance ", "Stiff neck", "all of the above"],
-
-            correctAnswer: "all of the above"
-
-        },
-        {
-
-            text: "18.How long after eating listeria-contaminated food do severe symptoms appear? ",
-
-            choices: ["Immediately ", "Within 24 hours ", "2 days ", " 3 days to 2 months "],
-
-            correctAnswer: "3 days to 2 months "
-
-        },
-        {
-
-            text: "19.What is the maximum amount of time perishable food should be left out?   ",
-
-            choices: [" 1.5 hours", " 2 hours", " 3 hours", " 3.5 hours"],
-
-            correctAnswer: "2 hours"
-
-        },
-        {
-
-            text: "20.What is the treatment for listeriosis?",
-
-            choices: [" Wash hands after preparing vegetables ", " Thoroughly cook all meat ", "Eat ready-to-eat food as soon as possible ", "All of the above "],
-
-            correctAnswer: "All of the above "
-
-        },
-        {
-
-            text: "21.You can remove all listeria by washing a cantaloupe.",
-
-            choices: ["True  ", " False "],
+            choices: ["True", " False "],
 
             correctAnswer: "False "
 
@@ -207,11 +228,21 @@ function Quiz3() {
 
         {
 
-            text: "22.If you suspect you've had a listeria-contaminated food in your refrigerator, you should: ",
+            text: "24.	handling knife with safe tips   ",
 
-            choices: ["Call doctor immediately ", "Rush to hospital ", "Thoroughly clean the refrigerator ", "all the above"],
+            choices: ["True", " False "],
 
-            correctAnswer: "Thoroughly clean the refrigerator "
+            correctAnswer: "True"
+
+        },
+
+        {
+
+            text: "25.	always be careful with knives   ",
+
+            choices: ["True", " False "],
+
+            correctAnswer: "True"
 
         },
 
@@ -221,6 +252,11 @@ function Quiz3() {
         // ... additional questions
 
     ];
+
+
+    // ... additional questions
+
+
 
 
     const handleAnswer = answer => {
@@ -290,7 +326,7 @@ function Quiz3() {
         <div className="question-container">
             <p >{question.text}</p>
             {question.choices.map(choice => (
-                <button key={choice} onClick={() => handleAnswer(choice)}>
+                <button className="NextButton" key={choice} onClick={() => handleAnswer(choice)}>
                     {choice}
                 </button>
             ))}
