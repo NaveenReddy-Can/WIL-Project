@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import '../css/Quiz.css';
 
 function Quiz4() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -317,7 +317,7 @@ function Quiz4() {
         <div className="question-container">
             <p >{question.text}</p>
             {question.choices.map(choice => (
-                <button key={choice} onClick={() => handleAnswer(choice)}>
+                <button className="NextButton" key={choice} onClick={() => handleAnswer(choice)}>
                     {choice}
                 </button>
             ))}
