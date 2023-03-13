@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+
     <head>
         <title>Safe Food Handling Readme</title>
     </head>
@@ -32,4 +31,4 @@
         <h2>Contributing</h2>
         <p>If you would like to contribute to this project, please read the contribution guidelines before submitting a pull request.</p>
     </body>
-</html>
+
