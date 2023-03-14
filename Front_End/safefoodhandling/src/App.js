@@ -18,6 +18,19 @@ import Certificate from './Components/Certificate';
 import Quiz1 from './Components/Quizzes/Quiz1';
 import Quiz2 from './Components/Quizzes/Quiz2';
 import Quiz4 from './Components/Quizzes/Quiz4';
+import ContactForm from './Components/Contactus';
+import ContactUsBubble from './Components/ContactUsBubble';
+import ListAllCourses from './Components/UserData/ListAllCourses';
+import AutoRegister from './Components/UserData/AutoAddUserdetails';
+import AListAllUsers from './Components/AdminData/A_ListAllUsers';
+import AListAllQuizzes from './Components/AdminData/A_ListAllQuizzes';
+import AListAllCourses from './Components/AdminData/A_ListAllCourses';
+import AListAllComplaints from './Components/AdminData/A_ListAllComplaints';
+import AListAllComplaintsResolved from './Components/AdminData/A_ListAllComplaintsResolved';
+import AListAllQuizAttempts from './Components/AdminData/A_ListAllQuizzAttempts';
+import AListAllComplaintsResolvedYes from './Components/AdminData/A_ListAllComplaintsResolvedYes';
+import AListAllComplaintsResolvedAll from './Components/AdminData/A_ListAllComplaintsResolvedall';
+import AListAllComplaintsResolvedNo from './Components/AdminData/A_ListAllComplaintsResolvedNo';
 /* main application in the project */
 /* Url navigations are declared here*/
 
@@ -43,15 +56,29 @@ function App() {
           <Route path="/quiz3" element={<Quiz3 />} />
           <Route path="/quiz4" element={<Quiz4 />} />
           <Route path="/finalassesment" element={<Quiz1 />} />
-
+          <Route path="/contactus" element={<ContactForm />} />
           <Route exact path="/userdata" element={<Home1 />} />
           <Route exact path="/AddProfile" element={<Register />} />
-          <Route exact path="/edit/:id" component={Edit} />
-          <Route exact path="userdata/view/:id" element={<Details />} />
+          <Route exact path="/edit/:id" component={<Edit />} />
+          <Route path="Profile/edit/:id" component={<Edit />} />
+          <Route exact path="userdata/edit/:id" element={<Details />} />
+          <Route exact path="/listallcourses" element={<ListAllCourses />} />
+          <Route exact path="/autoregister" element={<AutoRegister />} />
+          <Route path="/alistallusers" element={<AListAllUsers />} />
+          <Route path="/alistallquizzes" element={<AListAllQuizzes />} />
+          <Route path="/alistallcourses" element={<AListAllCourses />} />
+          <Route path="/alistallcomplaints" element={<AListAllComplaints />} />
+          <Route path="/alistallresolvedcomplaints" element={<AListAllComplaintsResolved />} />
+          <Route path="/alistallquizattempts" element={<AListAllQuizAttempts />} />
+          <Route path="/alistallcomplaintsresolvedyes" element={<AListAllComplaintsResolvedYes />} />
+          <Route path="/alistallcomplaintsresolvedall" element={<AListAllComplaintsResolvedAll />} />
+          <Route path="/alistallcomplaintsresolvedno" element={<AListAllComplaintsResolvedNo />} />
 
+
+          AListAllComplaintsResolvedYes
         </Routes>
         <h1> SAFE FOOD HANDLING WEBSITE COMMING SOON...</h1>
-
+        <ContactUsBubble />
       </div>
 
     </BrowserRouter>

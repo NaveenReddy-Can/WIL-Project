@@ -136,6 +136,7 @@ const CourseModule1 = () => {
                   <ul>
                     <div className="container">
                       <iframe
+                        title="frame1"
                         className="responsive-iframe"
                         src="https://www.youtube.com/embed/tgbNymZ7vqY"
                       ></iframe>
@@ -250,6 +251,7 @@ const CourseModule1 = () => {
                 <ul>
                   <div className="container">
                     <iframe
+                      title="frame2"
                       className="responsive-iframe"
                       src="https://www.youtube.com/embed/tgbNymZ7vqY"
                     ></iframe>
@@ -357,6 +359,7 @@ const CourseModule1 = () => {
                 <ul>
                   <div className="container">
                     <iframe
+                      title="frame3"
                       className="responsive-iframe"
                       src="https://www.youtube.com/embed/tgbNymZ7vqY"
                     ></iframe>

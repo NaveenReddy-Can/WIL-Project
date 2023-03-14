@@ -1,0 +1,43 @@
+.contact-us-bubble {
+    position: fixed;
+    bottom: -100px;
+    right: 20px;
+    z-index: 999;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-us-bubble.show {
+    bottom: 20px;
+  }
+  
+  .contact-us-bubble:hover {
+    background-color: #0062cc;
+  }
+  
+  .message-icon {
+    margin-right: 10px;
+  }
+  
+  .bubble-text {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .close-icon {
+    margin-left: 10px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .close-icon:hover {
+    color: #f00;
+  }
+  

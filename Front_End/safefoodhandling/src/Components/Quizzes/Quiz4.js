@@ -315,6 +315,8 @@ function Quiz4() {
 
     return (
         <div className="question-container">
+            <h1> Quiz 4</h1>
+            <p>.......................................................................................................................................................</p>
             <p >{question.text}</p>
             {question.choices.map(choice => (
                 <button className="NextButton" key={choice} onClick={() => handleAnswer(choice)}>

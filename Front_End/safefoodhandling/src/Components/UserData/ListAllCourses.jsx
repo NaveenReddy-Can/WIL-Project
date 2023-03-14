@@ -5,10 +5,12 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { NavLink } from "react-router-dom";
 import { adddata, deldata } from "../context/ContextProvider";
 import { updatedata } from "../context/ContextProvider";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const Home1 = () => {
-  const [getuserdata, setUserdata] = useState([]);
-  console.log(getuserdata);
+import "../css/UserData/ListAllCourses.css";
+const ListAllCourses = () => {
+  const [getAllCourses, setUserdata] = useState([]);
+  console.log(getAllCourses);
   console.log("hi");
 
   const { udata, setUdata } = useContext(adddata);
@@ -18,7 +20,7 @@ const Home1 = () => {
   const { dltdata, setDLTdata } = useContext(deldata);
 
   const getdata = async () => {
-    const res = await fetch("/getusersa", {
+    const res = await fetch("/getallcourses", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -130,43 +132,54 @@ const Home1 = () => {
             <thead>
               <tr className="table-dark">
                 <th scope="col">id</th>
-                <th scope="col">Username</th>
-                <th scope="col">email</th>
-                <th scope="col">Job</th>
-                <th scope="col">Number</th>
-                <th scope="col"></th>
+                <th scope="col">Course Id</th>
+                <th scope="col">Course name</th>
+                <th scope="col">Quiz1</th>
+                <th scope="col">Quiz2</th>
+                <th scope="col">Quiz3</th>
+                <th scope="col">Cumilative Quiz</th>
+                <th scope="col">Payment</th>
+                <th scope="col">Final Result</th>
               </tr>
             </thead>
             <tbody>
-              {getuserdata.map((element, id) => {
+              {getAllCourses.map((element, id) => {
                 return (
-                  <tr>
-                    <th scope="row">{id + 1}</th>
-                    <td>{element.name}</td>
-                    <td>{element.email}</td>
-                    <td>{element.work}</td>
-                    <td>{element.mobile}</td>
-                    <td className="d-flex justify-content-between">
-                      <NavLink to={`view/${element.id}`}>
-                        {" "}
-                        <button className="btn btn-success">
-                          <RemoveRedEyeIcon />
+                  <div>
+                    <tr>
+                      <th>{id + 1}</th>
+                      <th>{element.CourseID}</th>
+                      <td>{element.CourseName}</td>
+                      <td>{element.Quiz1}</td>
+                      <td>{element.Quiz2}</td>
+                      <td>{element.Quiz3}</td>
+                      <td>{element.CummilativeQuiz}</td>
+                      <td>{element.Payment}</td>
+                      <td>{element.FinalResult}</td>
+                      <td></td>
+                      <td></td>
+                      <td className="d-flex justify-content-between">
+                        <NavLink to={`view/${element.id}`}>
+                          {" "}
+                          <button className="btn btn-success">
+                            <RemoveRedEyeIcon />
+                          </button>
+                        </NavLink>
+                        <NavLink to={`edit/${element.id}`}>
+                          {" "}
+                          <button className="btn btn-primary">
+                            <CreateIcon />
+                          </button>
+                        </NavLink>
+                        <button
+                          className="btn btn-danger"
+                          onClick={() => deleteuser(element.id)}
+                        >
+                          <DeleteOutlineIcon />
                         </button>
-                      </NavLink>
-                      <NavLink to={`edit/${element.id}`}>
-                        {" "}
-                        <button className="btn btn-primary">
-                          <CreateIcon />
-                        </button>
-                      </NavLink>
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => deleteuser(element.id)}
-                      >
-                        <DeleteOutlineIcon />
-                      </button>
-                    </td>
-                  </tr>
+                      </td>
+                    </tr>
+                  </div>
                 );
               })}
             </tbody>
@@ -177,4 +190,4 @@ const Home1 = () => {
   );
 };
 
-export default Home1;
+export default ListAllCourses;

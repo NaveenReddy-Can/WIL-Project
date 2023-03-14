@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
 import Footer from './footer';
 import NavBar from './Components/Navbar';
+import Chatbot from './Components/Chatbot';
+import ContactUsBubble from './Components/ContactUsBubble';
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
@@ -29,6 +31,7 @@ root.render(
       <App />
 
       <Footer />
+ 
     </div>
   </Auth0Provider>
 
