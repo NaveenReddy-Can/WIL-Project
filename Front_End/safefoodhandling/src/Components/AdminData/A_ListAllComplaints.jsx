@@ -5,11 +5,11 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { NavLink } from "react-router-dom";
 import { adddata, deldata } from "../context/ContextProvider";
 import { updatedata } from "../context/ContextProvider";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const Home1 = () => {
-  const [getuserdata, setUserdata] = useState([]);
-  console.log(getuserdata);
-  console.log("hi");
+const AListAllComplaints = () => {
+  const [getAllComplaints, setUserdata] = useState([]);
+  console.log(getAllComplaints);
 
   const { udata, setUdata } = useContext(adddata);
 
@@ -18,7 +18,7 @@ const Home1 = () => {
   const { dltdata, setDLTdata } = useContext(deldata);
 
   const getdata = async () => {
-    const res = await fetch("/getusersa", {
+    const res = await fetch("/agetallcomplaints", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -120,6 +120,7 @@ const Home1 = () => {
 
       <div className="mt-5">
         <div className="container">
+          <h2>All Complaints List </h2>
           <div className="add_btn mt-2 mb-2">
             <NavLink to="/register" className="btn btn-primary">
               Add data
@@ -128,24 +129,35 @@ const Home1 = () => {
 
           <table class="table">
             <thead>
-              <tr className="table-dark">
+              <tr className=" table-dark">
                 <th scope="col">id</th>
-                <th scope="col">Username</th>
-                <th scope="col">email</th>
-                <th scope="col">Job</th>
-                <th scope="col">Number</th>
-                <th scope="col"></th>
+                <th className="d-flex justify-content-between" scope="col">
+                  Complaint ID
+                </th>
+                <th scope="col">User ID</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Complaint Description</th>
+                <th scope="col">Complaint_Status</th>
+                <th scope="col">User Email addres</th>
+                <th scope="col">User Mobile Number </th>
+                <th scope="col">Complaint Raised Date & Time </th>
+                <th>controls</th>
               </tr>
             </thead>
             <tbody>
-              {getuserdata.map((element, id) => {
+              {getAllComplaints.map((element, id) => {
                 return (
                   <tr>
-                    <th scope="row">{id + 1}</th>
-                    <td>{element.name}</td>
-                    <td>{element.email}</td>
-                    <td>{element.work}</td>
-                    <td>{element.mobile}</td>
+                    <th>{id + 1}</th>
+                    <th>{element.complaint_id}</th>
+                    <td>{element.user_id}</td>
+                    <td>{element.user_name}</td>
+                    <td>{element.complaint_desc}</td>
+                    <td>{element.complaint_status}</td>
+                    <td>{element.user_email}</td>
+                    <td>{element.user_mobile}</td>
+                    <td>{element.complaint_date_time}</td>
+
                     <td className="d-flex justify-content-between">
                       <NavLink to={`view/${element.id}`}>
                         {" "}
@@ -177,4 +189,4 @@ const Home1 = () => {
   );
 };
 
-export default Home1;
+export default AListAllComplaints;

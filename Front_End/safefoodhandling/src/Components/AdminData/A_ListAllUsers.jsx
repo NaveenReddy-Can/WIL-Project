@@ -5,11 +5,11 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { NavLink } from "react-router-dom";
 import { adddata, deldata } from "../context/ContextProvider";
 import { updatedata } from "../context/ContextProvider";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const Home1 = () => {
-  const [getuserdata, setUserdata] = useState([]);
-  console.log(getuserdata);
-  console.log("hi");
+const AListAllUsers = () => {
+  const [getAllUsers, setUserdata] = useState([]);
+  console.log(getAllUsers);
 
   const { udata, setUdata } = useContext(adddata);
 
@@ -18,7 +18,7 @@ const Home1 = () => {
   const { dltdata, setDLTdata } = useContext(deldata);
 
   const getdata = async () => {
-    const res = await fetch("/getusersa", {
+    const res = await fetch("/agetallusers", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -130,22 +130,23 @@ const Home1 = () => {
             <thead>
               <tr className="table-dark">
                 <th scope="col">id</th>
-                <th scope="col">Username</th>
-                <th scope="col">email</th>
-                <th scope="col">Job</th>
-                <th scope="col">Number</th>
-                <th scope="col"></th>
+                <th scope="col">User Id</th>
+                <th scope="col">User name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Password</th>
+                <th scope="col">Controls</th>
               </tr>
             </thead>
             <tbody>
-              {getuserdata.map((element, id) => {
+              {getAllUsers.map((element, id) => {
                 return (
                   <tr>
-                    <th scope="row">{id + 1}</th>
+                    <th>{id + 1}</th>
+                    <th>{element.id}</th>
                     <td>{element.name}</td>
                     <td>{element.email}</td>
-                    <td>{element.work}</td>
-                    <td>{element.mobile}</td>
+                    <td>{element.password}</td>
+
                     <td className="d-flex justify-content-between">
                       <NavLink to={`view/${element.id}`}>
                         {" "}
@@ -177,4 +178,4 @@ const Home1 = () => {
   );
 };
 
-export default Home1;
+export default AListAllUsers;

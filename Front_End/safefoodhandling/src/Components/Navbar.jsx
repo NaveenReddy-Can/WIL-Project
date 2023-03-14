@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/navbar.css";
+import "./css/Navbar.css";
 import Dotcom from "../Assets/Images/Dotcomlogo.png";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -10,11 +10,12 @@ const NavBar = () => {
 
   return (
     <div className="navbar">
-      <img src={Dotcom} alt="navlgo" />
+      <a href="/Home">
+        <img src={Dotcom} alt="navlgo" />
+      </a>
 
       <ul className="navbar-list">
         <li className="navbar-item">
-          {" "}
           <a href="/Home ">HOME</a>
         </li>
         <li className="navbar-item">
@@ -38,7 +39,7 @@ const NavBar = () => {
               Log Out
             </button>
           ) : (
-            <button Classname="NextButton" onClick={() => loginWithRedirect()}>
+            <button className="NextButton" onClick={() => loginWithRedirect()}>
               Log In
             </button>
           )}

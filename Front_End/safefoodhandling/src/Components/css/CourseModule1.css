@@ -339,7 +339,7 @@ ul{
     pointer-events: none;
     animation: sound 0.4s ease-out forwards;
   }
-  div{
+ .CourseModule{
     color: white;
     background-color: black;
     
@@ -360,9 +360,10 @@ ul{
   }
   .container {
     position: relative;
-   
     overflow: hidden;
-    padding-top: 35%; /* 4:3 Aspect Ratio */
+    border-color: #fff;
+    border-style: ridge;
+    border-width: 1cap;
   }
   
   .responsive-iframe {
