@@ -16,12 +16,12 @@
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
+    transform-style: flat;
+    transition: transform 0.6s;
   }
   
   .card:hover {
-    transform: rotateY(180deg)  scaleX(-1);
+    transform: rotateY(180deg) scaleX(-1);
     
   }
   
@@ -37,6 +37,7 @@
   .card-front,
 .card-back {
   -webkit-backface-visibility: hidden; /* Safari on iOS 5+ */
+ 
   backface-visibility: hidden;
 }
 
@@ -103,4 +104,10 @@
  article{
     color: #fff;
     text-decoration: none;
+  }
+  .card-info{
+ 
+      color: white;
+      background-color: black;
+   
   }

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Quiz2 from "./Quizzes/Quiz2";
 import "./css/CourseModule1.css";
+import { useNavigate } from "react-router-dom";
 
 const CourseModule1 = () => {
   const [activeUnit, setActiveUnit] = useState(1);
   const [completedUnits, setCompletedUnits] = useState([]);
   const [isExpanded, setIsExpanded] = useState([false, false, false]);
-
+  const history = useNavigate();
   const toggleExpand = (index) => {
     setIsExpanded((prevState) => {
       const newState = [...prevState];
@@ -14,17 +15,41 @@ const CourseModule1 = () => {
       return newState;
     });
   };
+  const handleClick = () => {
+    const newTab = window.open("", "_blank");
+    newTab.location.href = "/quiz1";
+  };
+  const handleClick2 = () => {
+    const newTab = window.open("", "_blank");
+    newTab.location.href = "/quiz2";
+  };
+  const handleClick3 = () => {
+    const newTab = window.open("", "_blank");
+    newTab.location.href = "/quiz3";
+  };
+  const handleClick4 = () => {
+    const newTab = window.open("", "_blank");
+    newTab.location.href = "/quiz4";
+  };
+
+  const handleClickfinal = () => {
+    const newTab = window.open("", "_blank");
+    newTab.location.href = "/quiz1";
+  };
+
   const handleUnitClick = (unit) => {
     setActiveUnit(unit);
   };
   const handleUnitCertificate = (certificate) => {
     setActiveUnit(certificate);
+    const newTab = window.open("", "_blank");
+    newTab.location.href = "/certificate";
+    history.push("/CourseModule");
   };
   const handleQuizSubmit = (unit) => {
     const updatedCompletedUnits = [...completedUnits];
     if (unit === 2) {
       // Update pass percentage for unit 2
-      //  <Quiz2 />;
       const passPercentage = 70;
       const quizScore = 78; // get quiz score
       if (quizScore >= passPercentage) {
@@ -109,8 +134,9 @@ const CourseModule1 = () => {
                   }`}
                 >
                   <ul>
-                    <div class="container">
+                    <div className="container">
                       <iframe
+                        title="frame1"
                         className="responsive-iframe"
                         src="https://www.youtube.com/embed/tgbNymZ7vqY"
                       ></iframe>
@@ -184,7 +210,7 @@ const CourseModule1 = () => {
                     <li>
                       <button
                         className="QuizButton"
-                        onClick={() => handleQuizSubmit(2)}
+                        onClick={() => (handleClick(), handleQuizSubmit(2))}
                       >
                         Unit 2 Quiz button
                       </button>
@@ -223,8 +249,9 @@ const CourseModule1 = () => {
                 }`}
               >
                 <ul>
-                  <div class="container">
+                  <div className="container">
                     <iframe
+                      title="frame2"
                       className="responsive-iframe"
                       src="https://www.youtube.com/embed/tgbNymZ7vqY"
                     ></iframe>
@@ -292,7 +319,7 @@ const CourseModule1 = () => {
                   <li>
                     <button
                       className="QuizButton"
-                      onClick={() => handleQuizSubmit(3)}
+                      onClick={() => (handleClick2(), handleQuizSubmit(3))}
                     >
                       Unit 3 Quiz button
                     </button>
@@ -330,8 +357,9 @@ const CourseModule1 = () => {
                 }`}
               >
                 <ul>
-                  <div class="container">
+                  <div className="container">
                     <iframe
+                      title="frame3"
                       className="responsive-iframe"
                       src="https://www.youtube.com/embed/tgbNymZ7vqY"
                     ></iframe>
@@ -399,7 +427,7 @@ const CourseModule1 = () => {
                   <li>
                     <button
                       className="QuizButton"
-                      onClick={() => handleQuizSubmit(4)}
+                      onClick={() => (handleClick3(), handleQuizSubmit(4))}
                     >
                       Unit 4 Quiz button
                     </button>
@@ -500,7 +528,7 @@ const CourseModule1 = () => {
                   <li>
                     <button
                       className="QuizButton"
-                      onClick={() => handleQuizSubmit(5)}
+                      onClick={() => (handleClickfinal(), handleQuizSubmit(5))}
                     >
                       Unit 5 Quiz button
                     </button>

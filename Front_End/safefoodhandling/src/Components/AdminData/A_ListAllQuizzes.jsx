@@ -1,0 +1,185 @@
+import React, { useState, useEffect, useContext } from "react";
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import CreateIcon from "@mui/icons-material/Create";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import { NavLink } from "react-router-dom";
+import { adddata, deldata } from "../context/ContextProvider";
+import { updatedata } from "../context/ContextProvider";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+const AListAllQuizzes = () => {
+  const [getAllQuizzes, setUserdata] = useState([]);
+  console.log(getAllQuizzes);
+
+  const { udata, setUdata } = useContext(adddata);
+
+  const { updata, setUPdata } = useContext(updatedata);
+
+  const { dltdata, setDLTdata } = useContext(deldata);
+
+  const getdata = async () => {
+    const res = await fetch("/agetallquizzes", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+    console.log(data);
+
+    if (res.status === 422 || !data) {
+      console.log("error ");
+    } else {
+      setUserdata(data);
+      console.log("get data");
+    }
+  };
+
+  useEffect(() => {
+    getdata();
+  }, []);
+
+  const deleteuser = async (id) => {
+    const res2 = await fetch(`/deleteuser/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const deletedata = await res2.json();
+    console.log(deletedata);
+
+    if (res2.status === 422 || !deletedata) {
+      console.log("error");
+    } else {
+      console.log("user deleted");
+      setDLTdata(deletedata);
+      getdata();
+    }
+  };
+
+  return (
+    <div>
+      {udata ? (
+        <div>
+          <div
+            class="alert alert-success alert-dismissible fade show"
+            role="alert"
+          >
+            <strong>{udata.name}</strong> added succesfully!
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+      {updata ? (
+        <div>
+          <div
+            class="alert alert-success alert-dismissible fade show"
+            role="alert"
+          >
+            <strong>{updata.name}</strong> updated succesfully!
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+
+      {dltdata ? (
+        <>
+          <div
+            class="alert alert-danger alert-dismissible fade show"
+            role="alert"
+          >
+            <strong>{dltdata.name}</strong> deleted succesfully!
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+        </>
+      ) : (
+        ""
+      )}
+
+      <div className="mt-5">
+        <div className="container">
+          <h2>All quizzes history</h2>
+          <div className="add_btn mt-2 mb-2">
+            <NavLink to="/register" className="btn btn-primary">
+              Add data
+            </NavLink>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr className="table-dark">
+                <th scope="col">id</th>
+                <th scope="col">Quiz ID</th>
+                <th scope="col">course ID</th>
+                <th scope="col">Quiz Type</th>
+                <th scope="col">Quiz Result</th>
+                <th scope="col">User ID </th>
+                <th scope="col">Attempt number</th>
+              </tr>
+            </thead>
+            <tbody>
+              {getAllQuizzes.map((element, id) => {
+                return (
+                  <tr>
+                    <th>{id + 1}</th>
+                    <th>{element.quizid}</th>
+                    <td>{element.courseid}</td>
+                    <td>{element.quiztype}</td>
+                    <td>{element.quizresult}</td>
+                    <td>{element.userid}</td>
+                    <td>{element.attemptnumber}</td>
+
+                    <td className="d-flex justify-content-between">
+                      <NavLink to={`view/${element.id}`}>
+                        {" "}
+                        <button className="btn btn-success">
+                          <RemoveRedEyeIcon />
+                        </button>
+                      </NavLink>
+                      <NavLink to={`edit/${element.id}`}>
+                        {" "}
+                        <button className="btn btn-primary">
+                          <CreateIcon />
+                        </button>
+                      </NavLink>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => deleteuser(element.id)}
+                      >
+                        <DeleteOutlineIcon />
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AListAllQuizzes;

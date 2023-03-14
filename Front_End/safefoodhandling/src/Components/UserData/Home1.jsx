@@ -18,7 +18,7 @@ const Home1 = () => {
   const { dltdata, setDLTdata } = useContext(deldata);
 
   const getdata = async () => {
-    const res = await fetch("/getusers", {
+    const res = await fetch("/getusersa", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -140,35 +140,33 @@ const Home1 = () => {
             <tbody>
               {getuserdata.map((element, id) => {
                 return (
-                  <div>
-                    <tr>
-                      <th scope="row">{id + 1}</th>
-                      <td>{element.name}</td>
-                      <td>{element.email}</td>
-                      <td>{element.work}</td>
-                      <td>{element.mobile}</td>
-                      <td className="d-flex justify-content-between">
-                        <NavLink to={`view/${element.id}`}>
-                          {" "}
-                          <button className="btn btn-success">
-                            <RemoveRedEyeIcon />
-                          </button>
-                        </NavLink>
-                        <NavLink to={`edit/${element.id}`}>
-                          {" "}
-                          <button className="btn btn-primary">
-                            <CreateIcon />
-                          </button>
-                        </NavLink>
-                        <button
-                          className="btn btn-danger"
-                          onClick={() => deleteuser(element.id)}
-                        >
-                          <DeleteOutlineIcon />
+                  <tr>
+                    <th scope="row">{id + 1}</th>
+                    <td>{element.name}</td>
+                    <td>{element.email}</td>
+                    <td>{element.work}</td>
+                    <td>{element.mobile}</td>
+                    <td className="d-flex justify-content-between">
+                      <NavLink to={`view/${element.id}`}>
+                        {" "}
+                        <button className="btn btn-success">
+                          <RemoveRedEyeIcon />
                         </button>
-                      </td>
-                    </tr>
-                  </div>
+                      </NavLink>
+                      <NavLink to={`edit/${element.id}`}>
+                        {" "}
+                        <button className="btn btn-primary">
+                          <CreateIcon />
+                        </button>
+                      </NavLink>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => deleteuser(element.id)}
+                      >
+                        <DeleteOutlineIcon />
+                      </button>
+                    </td>
+                  </tr>
                 );
               })}
             </tbody>
