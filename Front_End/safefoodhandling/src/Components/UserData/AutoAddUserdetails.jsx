@@ -11,6 +11,7 @@ const AutoRegister = () => {
     name: "",
     email: "",
     password: "",
+    confirmpassword: "",
   });
 
   const setdata = (e) => {
@@ -27,7 +28,7 @@ const AutoRegister = () => {
   const addinpdata = async (e) => {
     e.preventDefault();
 
-    const { name, email, password } = inpval;
+    const { name, email, password, confirmpassword } = inpval;
 
     if (name == "") {
       alert("name is required");
@@ -36,6 +37,8 @@ const AutoRegister = () => {
     } else if (!email.includes("@")) {
       alert("enter valid email");
     } else if (password == "") {
+      alert("password is required");
+    } else if (confirmpassword == !password) {
       alert("password is required");
     } else {
       const res = await fetch("/autoregister", {
@@ -57,8 +60,6 @@ const AutoRegister = () => {
         console.log("error ");
         alert("error");
       } else {
-        history.push("/");
-        setUdata(data);
         console.log("data added");
       }
     }
@@ -85,7 +86,7 @@ const AutoRegister = () => {
           </div>
           <div class="mb-3 col-lg-6 col-md-6 col-12">
             <label for="exampleInputPassword1" class="form-label">
-              email
+              Email
             </label>
             <input
               type="email"
@@ -98,13 +99,26 @@ const AutoRegister = () => {
           </div>
           <div class="mb-3 col-lg-6 col-md-6 col-12">
             <label for="exampleInputPassword1" class="form-label">
-              password
+              Password
             </label>
             <input
-              type="text"
+              type="password"
               value={inpval.password}
               onChange={setdata}
               name="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <div class="mb-3 col-lg-6 col-md-6 col-12">
+            <label for="exampleInputPassword1" class="form-label">
+              Confirm password
+            </label>
+            <input
+              type="password"
+              value={inpval.confirmpassword}
+              onChange={setdata}
+              name="confirmpassword"
               class="form-control"
               id="exampleInputPassword1"
             />

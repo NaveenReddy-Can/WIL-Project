@@ -1,5 +1,6 @@
 .form-container {
     display: flex;
+    width: 1400px;
     justify-content: center;
     align-items: left;
     border: 2px solid black;
@@ -30,9 +31,19 @@
     gap: 5px;
     text-align: left;
   }
-  
-  label {
+  input{
+    height: 50px;
+    width: 400px;
+  }
+  input[type="file"] {
+    background-color: #eee;
+    height: 60px;
+    width: 400px;
+    cursor: pointer;
+  }
+  div label {
     font-weight: bold;
+    align-items: center;
     color: #ffffff;
     padding-right: 15pt;
   }

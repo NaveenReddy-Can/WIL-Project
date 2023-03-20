@@ -116,7 +116,17 @@ router.get("/getusersa", (req, res) => {
         }
     })
 });
+router.get("/getuserdetails/:email", (req, res) => {
+    const { email } = req.params;
 
+    conn1.query("SELECT * FROM users where email = ?", email, (err, result) => {
+        if (err) {
+            res.status(422).json("nodata available");
+        } else {
+            res.status(201).json(result);
+        }
+    })
+});
 
 //
 // register user data

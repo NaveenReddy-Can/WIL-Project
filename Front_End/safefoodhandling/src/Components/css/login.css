@@ -1,22 +1,22 @@
-.main{
+.main1{
     text-align: center;
     justify-content: center;
     display: contents;
-    padding: 90px 0px 90px 0px;
+    padding: 10px 0px 10px 0px;
   }
-  .container{
+  .container1{
     width: 99%;
-    height: 43rem;
+    height: 50rem;
     background-color: #722F2F;
     display: block;
-    position: fixed;
+    display: block;
     justify-content: center;
     color: white;
   }
   
-  .container img {
-      height: 70px;
-      width: 70px;
+  .container1 img {
+      height: 5px;
+      width: 5px;
       padding-right: 50px;
       padding-left: 50px;
       padding-top: 50px;
@@ -26,14 +26,13 @@
   
   .content{
     padding-top: 10rem;
-    padding-left: 25rem;
-    position: fixed;
     justify-content: center;
     font-family: serif;
   }
   
   .content label{
-    font-size: 20px;
+    font-size: 40px;
+    text-transform: capitalize;
     width: 250px;
     height: 50px;
     display: inline-block;
@@ -41,21 +40,18 @@
   }
   
   .content input{
-    display: flexbox;
-    /* position: absolute; */
+    display:flexbox;
     width: 300px;
     height: 40px;
     background-color:#D9D9D9;
     box-shadow: none;
     border: 0ch;
   }
-  .content h7{
-    text-decoration: underline;
-  }
-  
+
   .content button{
     position: relative;
-    float: right;
+    float:inherit;
+    margin-left: 30rem;
     size: 12px;
     border-radius: 50px;
     height: 40px;
