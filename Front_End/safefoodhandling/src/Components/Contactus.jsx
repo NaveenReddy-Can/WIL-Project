@@ -56,7 +56,7 @@ const ContactForm = () => {
         <h2>Contact Us</h2>
 
         <div className="form-field">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Name : </label>
           <input
             id="name"
             type="text"
@@ -66,7 +66,7 @@ const ContactForm = () => {
         </div>
 
         <div className="form-field">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email : </label>
           <input
             id="email"
             type="email"
@@ -76,7 +76,7 @@ const ContactForm = () => {
         </div>
 
         <div className="form-field">
-          <label htmlFor="phone">Phone</label>
+          <label htmlFor="phone">Phone : </label>
           <input
             id="phone"
             type="tel"
@@ -86,7 +86,7 @@ const ContactForm = () => {
         </div>
 
         <div className="form-field">
-          <label htmlFor="gender">Gender</label>
+          <label htmlFor="gender">Gender : </label>
           <select
             id="gender"
             value={gender}
@@ -100,7 +100,7 @@ const ContactForm = () => {
         </div>
 
         <div className="form-field">
-          <label htmlFor="age">Age</label>
+          <label htmlFor="age">Age : </label>
           <input
             id="age"
             type="number"
@@ -110,7 +110,7 @@ const ContactForm = () => {
         </div>
 
         <div className="form-field">
-          <label htmlFor="subject">Subject</label>
+          <label htmlFor="subject">Subject : </label>
           <input
             id="subject"
             type="text"
@@ -120,7 +120,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message">Message : </label>
           <textarea
             id="message"
             value={message}
@@ -128,7 +128,7 @@ const ContactForm = () => {
           />
         </div>
         <div>
-          <label htmlFor="files">Attachments</label>
+          <label htmlFor="files">Attachments : </label>
           <input id="files" type="file" multiple onChange={handleFileChange} />
         </div>
         <button className="button button-sound" type="submit">

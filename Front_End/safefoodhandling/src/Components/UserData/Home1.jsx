@@ -132,8 +132,7 @@ const Home1 = () => {
                 <th scope="col">id</th>
                 <th scope="col">Username</th>
                 <th scope="col">email</th>
-                <th scope="col">Job</th>
-                <th scope="col">Number</th>
+                <th scope="col">Password</th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -144,8 +143,7 @@ const Home1 = () => {
                     <th scope="row">{id + 1}</th>
                     <td>{element.name}</td>
                     <td>{element.email}</td>
-                    <td>{element.work}</td>
-                    <td>{element.mobile}</td>
+                    <td>{element.password}</td>
                     <td className="d-flex justify-content-between">
                       <NavLink to={`view/${element.id}`}>
                         {" "}
