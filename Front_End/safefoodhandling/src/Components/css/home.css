@@ -20,8 +20,8 @@ width: 100%;
   font-weight: 700;
 }
 .popular-videos{
-  margin-top: 10px;
-  height: 400px;
+  margin-top: 40px;
+  height: 300px;
   color:black;
   background-color: white;
   overflow-y:scroll;
@@ -32,4 +32,13 @@ width: 100%;
   
 }
 
-
+.contenthome{
+  width: 1400px;
+  font-weight: 400;
+  justify-content: center;
+  margin-left: 60px;
+}
+.contenthome ul li{
+  font-weight: 400;
+  list-style: disc;
+}

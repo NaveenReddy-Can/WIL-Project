@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import CreateIcon from "@mui/icons-material/Create";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { adddata, deldata } from "../context/ContextProvider";
 import { updatedata } from "../context/ContextProvider";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const AListAllUsers = () => {
   const [getAllUsers, setUserdata] = useState([]);
   console.log(getAllUsers);
-
+  const history = useNavigate;
   const { udata, setUdata } = useContext(adddata);
 
   const { updata, setUPdata } = useContext(updatedata);
@@ -56,6 +56,7 @@ const AListAllUsers = () => {
     } else {
       console.log("user deleted");
       setDLTdata(deletedata);
+      history("/alistallusers");
       getdata();
     }
   };
@@ -149,13 +150,11 @@ const AListAllUsers = () => {
 
                     <td className="d-flex justify-content-between">
                       <NavLink to={`view/${element.id}`}>
-                        {" "}
                         <button className="btn btn-success">
                           <RemoveRedEyeIcon />
                         </button>
                       </NavLink>
                       <NavLink to={`edit/${element.id}`}>
-                        {" "}
                         <button className="btn btn-primary">
                           <CreateIcon />
                         </button>

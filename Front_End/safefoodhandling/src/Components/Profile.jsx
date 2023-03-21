@@ -83,8 +83,8 @@ const Profile = () => {
 
   const { dltdata, setDLTdata } = useContext(deldata);
 
-  const getdata = async () => {
-    const res = await fetch(`/getuserdetails/${user?.email}`, {
+  const getdata = async (email) => {
+    const res = await fetch(`/getuser/${email}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -153,9 +153,7 @@ const Profile = () => {
             </li>
           ))}
         </ul>
-        <div>
-          <Home1 />
-        </div>
+        <div></div>
         {getdata}
         <table class="table">
           <thead>

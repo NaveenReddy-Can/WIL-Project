@@ -30,6 +30,13 @@ import AListAllComplaintsResolvedYes from './Components/AdminData/A_ListAllCompl
 import AListAllComplaintsResolvedAll from './Components/AdminData/A_ListAllComplaintsResolvedall';
 import AListAllComplaintsResolvedNo from './Components/AdminData/A_ListAllComplaintsResolvedNo';
 import ALogin from './Components/Login';
+
+import AHomePage from './Components/AdminData/A_HomePage';
+import AlistAllPayments from './Components/AdminData/A_ListAllPayments';
+import APaymentEdit from './Components/AdminData/A_PaymentEdit';
+import A_listUserView from './Components/AdminData/A_ListAllUsersEdit';
+import AListUserView from './Components/AdminData/A_ListAllUsersEdit';
+import AUserEdit from './Components/AdminData/A_ListAllUserEdit';
 /* main application in the project */
 /* Url navigations are declared here*/
 
@@ -71,7 +78,10 @@ function App() {
           <Route exact path="/autoregister" element={<AutoRegister />} />
           {/** admin routes */}
           <Route path="/alogin" element={<ALogin />} />
+          <Route path="/ahomepage" element={<AHomePage />} />
           <Route path="/alistallusers" element={<AListAllUsers />} />
+          <Route path="/alistallusers/view/:id" element={<AListUserView />} />
+          <Route path="/alistallusers/edit/:id" element={<AUserEdit />} />
           <Route path="/alistallquizzes" element={<AListAllQuizzes />} />
           <Route path="/alistallcourses" element={<AListAllCourses />} />
           <Route path="/alistallcomplaints" element={<AListAllComplaints />} />
@@ -80,7 +90,8 @@ function App() {
           <Route path="/alistallcomplaintsresolvedyes" element={<AListAllComplaintsResolvedYes />} />
           <Route path="/alistallcomplaintsresolvedall" element={<AListAllComplaintsResolvedAll />} />
           <Route path="/alistallcomplaintsresolvedno" element={<AListAllComplaintsResolvedNo />} />
-
+          <Route path="/alistallpayments" element={<AlistAllPayments />} />
+          <Route path="/alistallpayments/paymentedit/:id" element={<APaymentEdit />} />
 
 
         </Routes>

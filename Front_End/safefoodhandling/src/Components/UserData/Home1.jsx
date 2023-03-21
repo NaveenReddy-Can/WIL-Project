@@ -17,8 +17,8 @@ const Home1 = () => {
 
   const { dltdata, setDLTdata } = useContext(deldata);
 
-  const getdata = async () => {
-    const res = await fetch("/getusersa", {
+  const getdata = async (password) => {
+    const res = await fetch(`/getuser/${password}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
