@@ -66,6 +66,20 @@ router.delete("/deleteuser/:id", (req, res) => {
     })
 });
 
+router.delete("/getuser/:password", (req, res) => {
+
+    const { id } = req.params;
+
+    conn.query("select * FROM users WHERE password = ? ", id, (err, result) => {
+        if (err) {
+            res.status(422).json("error");
+        } else {
+            res.status(201).json(result);
+        }
+    })
+});
+
+
 
 
 // get single user
@@ -171,6 +185,61 @@ router.get("/getallcourses", (req, res) => {
         }
     })
 });
+
+router.get("/agetallpayments", (req, res) => {
+
+    conn1.query("SELECT p.id, u.name as 'user_name', p.user_id, c.name as 'course_name',  p.course_id, p.payment_reference_number, p.payment_status, p.amount FROM payment p JOIN users u ON p.user_id = u.id JOIN courses c ON p.course_id = c.id; ", (err, result) => {
+        if (err) {
+            res.status(422).json("no data available");
+        } else {
+            res.status(201).json(result);
+        }
+    })
+});
+
+
+router.get("/paymentup/:id", (req, res) => {
+
+    const { id } = req.params;
+
+    conn.query("SELECT * FROM payment WHERE id = ? ", id, (err, result) => {
+        if (err) {
+            res.status(422).json("error");
+        } else {
+            res.status(201).json(result);
+        }
+    })
+});
+
+router.delete("/deletepayment/:id", (req, res) => {
+
+    const { id } = req.params;
+
+    conn.query("DELETE FROM payment WHERE id = ? ", id, (err, result) => {
+        if (err) {
+            res.status(422).json("error");
+        } else {
+            res.status(201).json(result);
+        }
+    })
+});
+
+router.patch("/updatepayment/:id", (req, res) => {
+
+    const { id } = req.params;
+
+    const data = req.body;
+
+    conn.query("UPDATE payment SET ? WHERE id = ? ", [data, id], (err, result) => {
+        if (err) {
+            res.status(422).json({ message: "error" });
+        } else {
+            res.status(201).json(result);
+        }
+    })
+});
+
+
 router.get("/agetallusers", (req, res) => {
 
     conn1.query("SELECT * FROM users", (err, result) => {

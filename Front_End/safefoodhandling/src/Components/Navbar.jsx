@@ -13,38 +13,42 @@ const NavBar = () => {
       <a href="/Home">
         <img src={Dotcom} alt="navlgo" />
       </a>
+      <div className="a">
+        <ul className="navbar-list">
+          <li className="navbar-item">
+            <a href="/Home ">HOME</a>
+          </li>
+          <li className="navbar-item">
+            <a href="/Courses ">COURSES</a>
+          </li>
+          <li className="navbar-item">
+            <a href=" ">MY LEARNING</a>
+          </li>
+          <li className="navbar-item">
+            <a href="/Profile">PROFILE</a>
+          </li>
 
-      <ul className="navbar-list">
-        <li className="navbar-item">
-          <a href="/Home ">HOME</a>
-        </li>
-        <li className="navbar-item">
-          <a href="/Courses ">COURSES</a>
-        </li>
-        <li className="navbar-item">
-          <a href=" ">MY LEARNING</a>
-        </li>
-        <li className="navbar-item">
-          <a href="/Profile">PROFILE</a>
-        </li>
-
-        <div className="nav-buttons">
-          {isAuthenticated ? (
-            <button
-              className="NextButton"
-              onClick={() =>
-                logout({ logoutParams: { returnTo: window.location.origin } })
-              }
-            >
-              Log Out
-            </button>
-          ) : (
-            <button className="NextButton" onClick={() => loginWithRedirect()}>
-              Log In
-            </button>
-          )}
-        </div>
-      </ul>
+          <div className="nav-buttons">
+            {isAuthenticated ? (
+              <button
+                className="NextButton"
+                onClick={() =>
+                  logout({ logoutParams: { returnTo: window.location.origin } })
+                }
+              >
+                Log Out
+              </button>
+            ) : (
+              <button
+                className="NextButton"
+                onClick={() => loginWithRedirect()}
+              >
+                Log In
+              </button>
+            )}
+          </div>
+        </ul>
+      </div>
     </div>
   );
 };

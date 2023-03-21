@@ -85,7 +85,7 @@ a{
     transform: translate(-50%, -50%) scale(0);
     opacity: 0;
   }
-  ul li a:hover {
+.a ul li a:hover {
     color: #d6da00;
     font-size: 22px;
     box-shadow: 0px 0px 10px #fff, 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #d6da00, 0px 0px 70px #d6da00, 0px 0px 80px #d6da00, 0px 0px 100px #d6da00, 0px 0px 150px #d6da00;
