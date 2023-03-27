@@ -134,7 +134,7 @@ const CourseModule1 = () => {
                   }`}
                 >
                   <ul>
-                    <div className="container">
+                    <div className="container1">
                       <iframe
                         title="frame1"
                         className="responsive-iframe"
@@ -249,7 +249,7 @@ const CourseModule1 = () => {
                 }`}
               >
                 <ul>
-                  <div className="container">
+                  <div className="container1">
                     <iframe
                       title="frame2"
                       className="responsive-iframe"
@@ -357,7 +357,7 @@ const CourseModule1 = () => {
                 }`}
               >
                 <ul>
-                  <div className="container">
+                  <div className="container1">
                     <iframe
                       title="frame3"
                       className="responsive-iframe"
@@ -386,7 +386,7 @@ const CourseModule1 = () => {
                       several techniques that can be used to handle raw meat
                       safely. Firstly, always wash hands thoroughly with soap
                       and water before and after handling raw meat. Secondly,
-                      use separate cutting boards, utensils, and containers for
+                      use separate cutting boards, utensils, and container1s for
                       raw meat and other foods to prevent cross-contamination.
                       Thirdly, keep raw meat refrigerated until ready to use,
                       and cook it to the appropriate internal temperature to
@@ -487,7 +487,7 @@ const CourseModule1 = () => {
                       several techniques that can be used to handle raw meat
                       safely. Firstly, always wash hands thoroughly with soap
                       and water before and after handling raw meat. Secondly,
-                      use separate cutting boards, utensils, and containers for
+                      use separate cutting boards, utensils, and container1s for
                       raw meat and other foods to prevent cross-contamination.
                       Thirdly, keep raw meat refrigerated until ready to use,
                       and cook it to the appropriate internal temperature to

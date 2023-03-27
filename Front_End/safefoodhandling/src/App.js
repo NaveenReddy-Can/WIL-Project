@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Components/Login';
 import Home from './Components/Home';
 import Courses from './Components/Courses';
+import MyLearning from './Components/MyLearning';
 import Register from './Components/UserData/AddUser'
 import Edit from './Components/UserData/Edit'
 import Details from './Components/UserData/Details'
@@ -37,10 +38,12 @@ import APaymentEdit from './Components/AdminData/A_PaymentEdit';
 import A_listUserView from './Components/AdminData/A_ListAllUsersEdit';
 import AListUserView from './Components/AdminData/A_ListAllUsersEdit';
 import AUserEdit from './Components/AdminData/A_ListAllUserEdit';
+import CardComponent from './Components/CourseListCards';
 /* main application in the project */
 /* Url navigations are declared here*/
 
 function App() {
+
   return (
 
     <BrowserRouter>
@@ -55,8 +58,10 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/mylearning" element={<MyLearning />} />
           <Route path="/home" element={<Home />} />
           <Route path="/contactus" element={<ContactForm />} />
+          <Route path="/cardcomponent" element={<CardComponent />} />
           {/** module 1  routes */}
           <Route path="/certificate" element={<Certificate />} />
           <Route path="/quiz1" element={<Quiz1 />} />
@@ -105,3 +110,4 @@ function App() {
 }
 
 export default App;
+
