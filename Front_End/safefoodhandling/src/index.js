@@ -24,14 +24,14 @@ root.render(
     }}
   >
     <div className='Navbar'>
-      <NavBar />
 
+      <NavBar />
     </div>
     <div className='MainBody'>
       <App />
 
       <Footer />
- 
+
     </div>
   </Auth0Provider>
 

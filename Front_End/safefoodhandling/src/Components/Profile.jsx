@@ -6,6 +6,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { adddata } from "../Components/context/ContextProvider";
 import { deldata } from "../Components/context/ContextProvider";
 import { updatedata } from "../Components/context/ContextProvider";
+import PersonPinIcon from "@mui/icons-material/PersonPin";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import CreateIcon from "@mui/icons-material/Create";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
@@ -15,6 +16,11 @@ const Profile = () => {
   const { loginWithRedirect } = useAuth0();
   const { logout } = useAuth0();
   const { udata, setUdata } = useContext(adddata);
+  const [getuserdata, setUserdata] = useState([]);
+
+  const { updata, setUPdata } = useContext(updatedata);
+
+  const { dltdata, setDLTdata } = useContext(deldata);
 
   const history = useNavigate();
 
@@ -24,6 +30,7 @@ const Profile = () => {
     password: "",
     confirmpassword: "",
   });
+  var email1 = user?.email;
 
   const setdata = (e) => {
     console.log(e.target.value);
@@ -76,15 +83,8 @@ const Profile = () => {
     }
   };
 
-  const [getuserdata, setUserdata] = useState([]);
-  console.log(getuserdata);
-
-  const { updata, setUPdata } = useContext(updatedata);
-
-  const { dltdata, setDLTdata } = useContext(deldata);
-
-  const getdata = async (email) => {
-    const res = await fetch(`/getuser/${email}`, {
+  const getdata = async (email1) => {
+    const res = await fetch(`/getuser/${email1}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -106,106 +106,144 @@ const Profile = () => {
     getdata();
   }, []);
 
-  const deleteuser = async (id) => {
-    const res2 = await fetch(`/deleteuser/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    const deletedata = await res2.json();
-    console.log(deletedata);
-
-    if (res2.status === 422 || !deletedata) {
-      console.log("error");
-    } else {
-      console.log("user deleted");
-      setDLTdata(deletedata);
-      getdata();
-    }
-  };
-
   return isAuthenticated ? (
     isAuthenticated && (
-      <article className="profilestyle">
-        <center>
-          {user?.picture && <img src={user.picture} alt={user?.name} />}
-        </center>
-        <h2>{user?.name}</h2>
-        <form action="">
-          {(inpval.name = user?.name)}
+      <>
+        {udata ? (
+          <>
+            <div
+              class="alert alert-success alert-dismissible fade show"
+              role="alert"
+            >
+              <strong>{udata.name}</strong> added succesfully!
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
+        {updata ? (
+          <>
+            <div
+              class="alert alert-success alert-dismissible fade show"
+              role="alert"
+            >
+              <strong>{updata.name}</strong> updated succesfully!
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
+
+        {dltdata ? (
+          <>
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              role="alert"
+            >
+              <strong>{dltdata.name}</strong> deleted succesfully!
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
+
+        <article className="profilestyle">
+          <NavLink to={`display/${user?.email}`}>
+            {" "}
+            <button
+              className="btn btn-danger"
+              style={{
+                height: "60px",
+                width: "80px",
+                fontSize: "Large",
+                float: "right",
+              }}
+            >
+              <PersonPinIcon />
+            </button>
+          </NavLink>
+          <center>
+            {user?.picture && <img src={user.picture} alt={user?.name} />}
+          </center>
+          <h2>{user?.name}</h2>
+
           {setdata}
-          {(inpval.email = user?.email)}
-          {setdata}
-          {(inpval.password = user?.sub)}
-          {setdata}
-          {(inpval.confirmpassword = user?.sub)}
-          {setdata}
-          <button type="submit" onClick={addinpdata} class="btn btn-primary">
-            Accept terms and conditions
-          </button>
-        </form>
-        <ul>
-          {Object.keys(user).map((objKey, i) => (
-            <li key={i}>
-              {objKey}: {user[objKey]}
-            </li>
-          ))}
-        </ul>
-        <div></div>
-        {getdata}
-        <table class="table">
-          <thead>
-            <tr className="table-dark">
-              <th scope="col">id</th>
-              <th scope="col">Username</th>
-              <th scope="col">email</th>
-              <th scope="col">Password</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {getuserdata.map((element, id) => {
-              return (
-                <tr>
-                  <th scope="row">{id + 1}</th>
-                  <td>{element.name}</td>
-                  <td>{element.email}</td>
-                  <td>{element.password}</td>
-                  <td className="d-flex justify-content-between">
-                    <NavLink to={`view/${element.id}`}>
-                      {" "}
-                      <button className="btn btn-success">
-                        <RemoveRedEyeIcon />
-                      </button>
-                    </NavLink>
-                    <NavLink to={`edit/${element.id}`}>
-                      {" "}
-                      <button className="btn btn-primary">
-                        <CreateIcon />
-                      </button>
-                    </NavLink>
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => deleteuser(element.id)}
-                    >
-                      <DeleteOutlineIcon />
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </article>
+          {addinpdata}
+
+          <ul>
+            {Object.keys(user).map((objKey, i) => (
+              <li key={i}>
+                {objKey}: {user[objKey]}
+              </li>
+            ))}
+          </ul>
+          <div></div>
+
+          {/* {getdata(user?.email)}*/}
+        </article>
+      </>
     )
   ) : (
-    <artical className="profilestyle1">
-      <center>
-        <h1>Please login to see your profile Here</h1>
-      </center>
-    </artical>
+    <div
+      class="jumbotron"
+      style={{ marginLeft: "150px", marginRight: "100px" }}
+    >
+      <h2 class="display-4">Please login... to see Your Profile Here</h2>
+      <p class="lead">
+        Up on successfull login user will be albe to see the listed below in the
+        page.
+      </p>
+      <hr class="my-4"></hr>
+      <p>
+        Profile picture: A photo or image that represents the individual or
+        entity.
+      </p>
+
+      <p>
+        Basic information: Name, title or profession, contact information (such
+        as email, phone number or social media profiles), and location.
+      </p>
+
+      <p>
+        About me section: A brief summary of the individual or entity's
+        background, experience, skills, interests, and goals.
+      </p>
+
+      <p>
+        Education and work experience: Details about education and work history,
+        including degrees earned, institutions attended, job titles, and
+        descriptions of responsibilities and accomplishments.
+      </p>
+
+      <p>
+        Skills and endorsements: A list of skills that the individual possesses,
+        along with endorsements from other professionals.
+      </p>
+
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">
+          Learn more
+        </a>
+      </p>
+    </div>
   );
 };
 

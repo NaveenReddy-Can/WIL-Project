@@ -5,8 +5,8 @@ import FoodSaftey1 from "../Assets/Images/food-safety.png";
 import FoodSaftey2 from "../Assets/Images/food-safety2.jpg";
 import BootstrapCarousel from "./HomePageCarausole";
 import BootstrapCarouselVideos from "./HomePageCarouselVideo";
-import BootstrapCarousel3 from "./dummylike";
-import BootstrapCarousel4 from "./dummy2like";
+
+import BootstrapCarousel4 from "./HomepageCarousel2.jsx";
 const Home = () => {
   const [index, setIndex] = useState(0);
 
@@ -42,16 +42,18 @@ const Home = () => {
 
   return (
     <div className="brand-gallery">
-      <div className="brand-images">
+      {/*<div className="brand-images">
         <img
           src={FoodSaftey}
           alt={brandImages[index].alt}
           className="brand-image"
         />
-      </div>
+  </div>*/}
+      <BootstrapCarousel4 />
       <div className="brand-text">
         <center> Welcome To Safe Food Handling 🍁 Canada 🍁</center>
       </div>
+
       <div className="contenthome">
         <h3>Welcome to SafeFoodHandling! </h3>
         <p>
@@ -102,8 +104,6 @@ const Home = () => {
           to working with you!
         </p>
       </div>
-      <BootstrapCarousel3 />
-      <BootstrapCarousel4 />
     </div>
   );
 };

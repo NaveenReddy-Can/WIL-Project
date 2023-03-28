@@ -25,7 +25,8 @@ const CardComponent = () => {
                 safe.
               </Card.Text>
               <div className="CardBodyButtons">
-                <form action="/create-checkout-session" method="POST">
+                <form action="/createcheckoutsession" method="POST">
+                  <input type="hidden" name="PRICE" value="10" />
                   <Button type="submit" variant="primary">
                     Buy $10
                   </Button>{" "}

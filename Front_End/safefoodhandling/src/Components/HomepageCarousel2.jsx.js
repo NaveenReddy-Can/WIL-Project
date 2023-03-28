@@ -3,10 +3,38 @@ import { Carousel } from 'react-bootstrap';
 import { FaHeart, FaRegHeart, FaThumbsDown } from 'react-icons/fa';
 
 const images = [
-    { src: 'https://wilproject.blob.core.windows.net/images/foodstorage2.jpg', caption: 'Caption 1' },
-    { src: 'https://wilproject.blob.core.windows.net/images/foodstorage2.jpg', caption: 'Caption 2' },
-    { src: 'https://wilproject.blob.core.windows.net/images/foodstorage2.jpg', caption: 'Caption 3' },
-
+    {
+        src: "https://wilproject.blob.core.windows.net/images/food_safe.jpg",
+        caption: "Caption 1",
+    },
+    {
+        src: "https://wilproject.blob.core.windows.net/images/Food-Safety-Education.jpg",
+        caption: "Caption 2",
+    },
+    {
+        src: "https://wilproject.blob.core.windows.net/images/foodcutting.jpeg",
+        caption: "Caption 3",
+    },
+    {
+        src: "https://wilproject.blob.core.windows.net/images/foodsafety.jpg",
+        caption: "Caption 4",
+    },
+    {
+        src: "https://wilproject.blob.core.windows.net/images/foodsafety2.png",
+        caption: "Caption 5",
+    },
+    {
+        src: "https://wilproject.blob.core.windows.net/images/foodstorage1.jpg",
+        caption: "Caption 6",
+    },
+    {
+        src: "https://wilproject.blob.core.windows.net/images/foodstorage2.jpg",
+        caption: "Caption 7",
+    },
+    {
+        src: "https://wilproject.blob.core.windows.net/images/Food-Safety-Education.jpg",
+        caption: "Caption 8",
+    },
 
 ];
 
@@ -29,7 +57,7 @@ const BootstrapCarousel4 = () => {
             <Carousel style={{ color: 'black' }}>
                 {images.map((image, index) => (
                     <Carousel.Item key={index}>
-                        <img className="d-block w-100" src={image.src} alt={`Slide ${index}`} />
+                        <img className="d-block w-100" style={{ height: "600px", width: "1500px" }} src={image.src} alt={`Slide ${index}`} />
                         <Carousel.Caption>
                             <h3>{image.caption}</h3>
                             <div className="d-flex justify-content-center">
@@ -38,8 +66,7 @@ const BootstrapCarousel4 = () => {
                                 </button>
                                 <button className="btn btn-link p-0" onClick={() => handleDislikeClick(index)}>
                                     {disliked[index] ? (
-                                        <FaThumbsDown size={36} color="HEX
-                                        #FFA726"  />
+                                        <FaThumbsDown size={36} color="#FFA726" />
                                     ) : (
                                         <FaThumbsDown size={30} color="#FFFFFF" />
                                     )}
@@ -49,9 +76,9 @@ const BootstrapCarousel4 = () => {
                     </Carousel.Item>
                 ))}
             </Carousel>
-            <div className="text-center my-5 py-5" style={{ color: 'black', backgroundColor: 'white' }}>
+            {/*<div className="text-center my-5 py-5" style={{ color: 'black', backgroundColor: 'white' }}>
                 <p className="lead">{Object.values(liked).filter(Boolean).length} people liked this carousel</p>
-            </div>
+                                    </div>*/}
         </>
     );
 };

@@ -39,6 +39,8 @@ import A_listUserView from './Components/AdminData/A_ListAllUsersEdit';
 import AListUserView from './Components/AdminData/A_ListAllUsersEdit';
 import AUserEdit from './Components/AdminData/A_ListAllUserEdit';
 import CardComponent from './Components/CourseListCards';
+import CheckoutForm from './Components/CheackoutPage';
+import ProfileView from './Components/ProfileView';
 /* main application in the project */
 /* Url navigations are declared here*/
 
@@ -62,6 +64,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/contactus" element={<ContactForm />} />
           <Route path="/cardcomponent" element={<CardComponent />} />
+          <Route path="/createcheckoutsession" element={<CheckoutForm />} />
           {/** module 1  routes */}
           <Route path="/certificate" element={<Certificate />} />
           <Route path="/quiz1" element={<Quiz1 />} />
@@ -73,11 +76,13 @@ function App() {
           {/** user  routes */}
           <Route exact path="/userdata" element={<Home1 />} />
           <Route exact path="/AddProfile" element={<Register />} />
-          <Route exact path="/edit/:id" component={<Edit />} />
-          <Route exact path="/edit" component={<Edit />} />
-          <Route exact path="Profile/view/:id" component={<Edit />} />
+          <Route exact path="/edit/:id" element={<Edit />} />
+          <Route exact path="/edit" element={<Edit />} />
+          <Route exact path="Profile/view/:id" element={<Edit />} />
           <Route exact path="userdata/edit/:id" element={<Details />} />
           <Route exact path="userdata/view/:id" element={<Details />} />
+          <Route path="Profile/display/:email" element={<ProfileView />} />
+
           <Route exact path="/Details" element={<Details />} />
           <Route exact path="/listallcourses" element={<ListAllCourses />} />
           <Route exact path="/autoregister" element={<AutoRegister />} />
@@ -100,7 +105,7 @@ function App() {
 
 
         </Routes>
-        <h1> SAFE FOOD HANDLING WEBSITE COMMING SOON...</h1>
+
         <ContactUsBubble />
       </div>
 

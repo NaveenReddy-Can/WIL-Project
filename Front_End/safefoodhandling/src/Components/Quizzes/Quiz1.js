@@ -319,7 +319,7 @@ function Quiz1() {
 
     return (
         <div className="question-container">
-            <h1> Quiz 2</h1>
+            <h1> Quiz 1</h1>
             <p>.......................................................................................................................................................</p>
             <p >{question.text}</p>
             {question.choices.map(choice => (

@@ -141,8 +141,34 @@ router.get("/getuserdetails/:email", (req, res) => {
         }
     })
 });
+router.get("/getusers/:email", (req, res) => {
+    const { email } = req.params;
 
-//
+
+    conn1.query("SELECT * FROM users where email = ?", email, (err, result) => {
+        if (err) {
+            res.status(422).json("nodata available");
+        } else {
+            res.status(201).json(result);
+        }
+    })
+});
+router.patch("/updateuser/:email", (req, res) => {
+
+    const { email } = req.params;
+
+    const data = req.body;
+
+    conn.query("UPDATE users SET ? WHERE email = ? ", [data, email], (err, result) => {
+        if (err) {
+            res.status(422).json({ message: "error" });
+        } else {
+            res.status(201).json(result);
+        }
+    })
+});
+
+
 // register user data
 router.post("/autoregister", (req, res) => {
 

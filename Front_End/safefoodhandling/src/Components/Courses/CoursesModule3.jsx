@@ -83,6 +83,12 @@ const CourseModule4 = () => {
   return (
     <div className="CourseModule">
       <ul>
+        <center>
+          {" "}
+          <h1 class="alert alert-info" role="alert">
+            Food Safety and Quality Control in the Food Industry
+          </h1>
+        </center>
         <li className={activeUnit === 1 ? "active" : ""}>
           <button
             className="UnitButton"

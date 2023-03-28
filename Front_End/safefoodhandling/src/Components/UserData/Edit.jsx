@@ -13,11 +13,7 @@ const Edit = () => {
   const [inpval, setINP] = useState({
     name: "",
     email: "",
-    age: "",
-    mobile: "",
-    work: "",
-    add: "",
-    desc: "",
+    password: "",
   });
 
   const setdata = (e) => {
@@ -60,7 +56,7 @@ const Edit = () => {
   const updateuser = async (e) => {
     e.preventDefault();
 
-    const { name, email, work, add, mobile, desc, age } = inpval;
+    const { name, email, password } = inpval;
 
     const res2 = await fetch(`/updateuser/${id}`, {
       method: "PATCH",
@@ -70,11 +66,7 @@ const Edit = () => {
       body: JSON.stringify({
         name,
         email,
-        work,
-        add,
-        mobile,
-        desc,
-        age,
+        password,
       }),
     });
 
@@ -84,14 +76,14 @@ const Edit = () => {
     if (res2.status === 422 || !data2) {
       alert("fill the data");
     } else {
-      history.push("/");
+      history("/Profile");
       setUPdata(data2);
     }
   };
 
   return (
     <div classNameName="container">
-      <NavLink to="/">home2</NavLink>
+      <NavLink to="/profile">home2</NavLink>
       <form classNameName="mt-4">
         <div classNameName="row">
           <div classNameName="mb-3 col-lg-6 col-md-6 col-12">
@@ -119,83 +111,24 @@ const Edit = () => {
               name="email"
               className="form-control"
               id="exampleInputPassword1"
+              disabled
             />
           </div>
-          <div className="mb-3 col-lg-6 col-md-6 col-12">
-            <label for="exampleInputPassword1" className="form-label">
-              age
-            </label>
-            <input
-              type="text"
-              value={inpval.age}
-              onChange={setdata}
-              name="age"
-              className="form-control"
-              id="exampleInputPassword1"
-            />
-          </div>
-          <div className="mb-3 col-lg-6 col-md-6 col-12">
-            <label for="exampleInputPassword1" className="form-label">
-              Mobile
-            </label>
-            <input
-              type="number"
-              value={inpval.mobile}
-              onChange={setdata}
-              name="mobile"
-              className="form-control"
-              id="exampleInputPassword1"
-            />
-          </div>
-          <div className="mb-3 col-lg-6 col-md-6 col-12">
-            <label for="exampleInputPassword1" className="form-label">
-              Work
-            </label>
-            <input
-              type="text"
-              value={inpval.work}
-              onChange={setdata}
-              name="work"
-              className="form-control"
-              id="exampleInputPassword1"
-            />
-          </div>
-          <div className="mb-3 col-lg-6 col-md-6 col-12">
-            <label for="exampleInputPassword1" className="form-label">
-              Address
-            </label>
-            <input
-              type="text"
-              value={inpval.add}
-              onChange={setdata}
-              name="add"
-              className="form-control"
-              id="exampleInputPassword1"
-            />
-          </div>
-          <div className="mb-3 col-lg-12 col-md-12 col-12">
-            <label for="exampleInputPassword1" className="form-label">
-              Description
-            </label>
-            <textarea
-              name="desc"
-              value={inpval.desc}
-              onChange={setdata}
-              classNameName="form-control"
-              id=""
-              cols="30"
-              rows="5"
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            onClick={updateuser}
-            className="btn btn-primary"
-          >
-            Submit
-          </button>
+          <label for="exampleInputPassword1" classNameName="form-label">
+            Password
+          </label>
+          <input
+            type="text"
+            value={inpval.password}
+            onChange={setdata}
+            name="password"
+            className="form-control"
+            id="exampleInputPassword1"
+          />
         </div>
+        <button type="submit" onClick={updateuser} className="btn btn-primary">
+          Submit
+        </button>
       </form>
     </div>
   );
