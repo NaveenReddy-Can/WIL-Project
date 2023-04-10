@@ -8,7 +8,6 @@ table {
     padding: 10px;
   }
   .container{
-    overflow-x: scroll;
-    overflow-y:scroll;
+    overflow: visible;
     width: 1600px;
   }

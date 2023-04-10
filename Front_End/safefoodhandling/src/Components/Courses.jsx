@@ -18,10 +18,6 @@ const Courses = () => {
     <div className="OutGrid">
       <h2>Courses On Trending </h2>
       <CardComponent />
-      <CourseModule1 />
-      <CourseModule2 />
-      <CourseModule3 />
-      <CourseModule4 />
     </div>
   );
 };

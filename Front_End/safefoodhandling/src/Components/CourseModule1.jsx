@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Quiz2 from "./Quizzes/Quiz2";
 import "./css/CourseModule1.css";
 import { useNavigate } from "react-router-dom";
+import Buttons from "./Quizzes/Buttons";
 
 const CourseModule1 = () => {
   const [activeUnit, setActiveUnit] = useState(1);
@@ -15,6 +16,11 @@ const CourseModule1 = () => {
       return newState;
     });
   };
+
+  const [showComponent, setShowComponent] = useState(false);
+
+  const handleToggle = () => setShowComponent(!showComponent);
+
   const handleClick = () => {
     const newTab = window.open("", "_blank");
     newTab.location.href = "/quiz1";
@@ -83,6 +89,13 @@ const CourseModule1 = () => {
 
   return (
     <div className="CourseModule">
+      <center>
+        {" "}
+        <h1 class="alert alert-info" role="alert">
+          Food Safety and Preparation
+        </h1>
+      </center>
+
       <ul>
         <li className={activeUnit === 1 ? "active" : ""}>
           <button
@@ -100,7 +113,10 @@ const CourseModule1 = () => {
                 </button>
               </li>
               <li>
-                <button className="AssesmentButton">Assessments </button>
+                <button onClick={handleToggle} className="AssesmentButton">
+                  Assessments{" "}
+                </button>
+                {showComponent && <Buttons />}
               </li>
               <li>
                 <button
