@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
-
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 import SignUp from './Components/SignUp';
 import Profile from './Components/Profile';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -32,19 +33,27 @@ import AListAllComplaintsResolvedAll from './Components/AdminData/A_ListAllCompl
 import AListAllComplaintsResolvedNo from './Components/AdminData/A_ListAllComplaintsResolvedNo';
 import ALogin from './Components/Login';
 
-import AHomePage from './Components/AdminData/A_HomePage';
+import AHomePage from './Components/AdminData/A_HomePage1';
 import AlistAllPayments from './Components/AdminData/A_ListAllPayments';
 import APaymentEdit from './Components/AdminData/A_PaymentEdit';
 import A_listUserView from './Components/AdminData/A_ListAllUsersEdit';
 import AListUserView from './Components/AdminData/A_ListAllUsersEdit';
 import AUserEdit from './Components/AdminData/A_ListAllUserEdit';
 import CardComponent from './Components/CourseListCards';
-import CheckoutForm from './Components/CheackoutPage';
+
 import ProfileView from './Components/ProfileView';
+import UploadBlob from './Components/BlobUploads';
+import CheckoutForm from './Components/CheckoutForm';
+import CheckoutForm1 from './Components/CheackoutPage';
+import CourseModule1 from './Components/CourseModule1';
+import CourseModule2 from './Components/Courses/CourseModule2';
+import CourseModule3 from './Components/Courses/CourseModule4';
+import CourseModule4 from './Components/Courses/CoursesModule3';
 /* main application in the project */
 /* Url navigations are declared here*/
 
 function App() {
+  const promise = loadStripe("pk_test_51MTojlHAH0Gg4pVK5nNt1qLhLg6sjmzjCRg9cpEKZJvt8kfB5NPRtPV4Sq7E8iTdKaLl4XFMBxtbgTWdhRrCvZ9t00CKUfpntk");
 
   return (
 
@@ -61,10 +70,19 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/mylearning" element={<MyLearning />} />
+          <Route path="/uploadblob" element={<UploadBlob />} />
           <Route path="/home" element={<Home />} />
           <Route path="/contactus" element={<ContactForm />} />
           <Route path="/cardcomponent" element={<CardComponent />} />
-          <Route path="/createcheckoutsession" element={<CheckoutForm />} />
+          <Route path="/checkoutform1" element={<CheckoutForm1 />} />
+          <Route path="/cm1" element={<CourseModule1 />} />
+          <Route path="/cm2" element={<CourseModule2 />} />
+          <Route path="/cm3" element={<CourseModule3 />} />
+          <Route path="/cm4" element={<CourseModule4 />} />
+
+
+          <Route stripe={promise} path="/checkoutform/:Price/:CourseName/" element={<CheckoutForm />} />
+
           {/** module 1  routes */}
           <Route path="/certificate" element={<Certificate />} />
           <Route path="/quiz1" element={<Quiz1 />} />

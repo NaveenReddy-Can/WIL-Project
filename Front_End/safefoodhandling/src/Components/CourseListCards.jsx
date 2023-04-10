@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { navigate } from "@reach/router";
 import "./css/CourseListCard.css";
 const CardComponent = () => {
+  const Price = 10;
+  const CourseName = "safefood";
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Here you can do whatever you want with the values
+    // For this example, we'll just pass them to the new component
+    // as props
+    navigate(`/checkoutform1`);
+  };
   return (
     <div className="container">
       <div className="row">
@@ -25,12 +37,11 @@ const CardComponent = () => {
                 safe.
               </Card.Text>
               <div className="CardBodyButtons">
-                <form action="/createcheckoutsession" method="POST">
-                  <input type="hidden" name="PRICE" value="10" />
+                <Link to="/checkoutform1">
                   <Button type="submit" variant="primary">
                     Buy $10
                   </Button>{" "}
-                </form>
+                </Link>
                 <Button variant="secondary"> + Add to wishlist</Button>
               </div>
             </Card.Body>
@@ -53,11 +64,11 @@ const CardComponent = () => {
                 cooking, we can ensure that the food we eat is safe and healthy.
               </Card.Text>
               <div className="CardBodyButtons">
-                <form action="/create-checkout-session" method="POST">
+                <Link to="{{ pathname: '/checkoutform1', state: { CourseId: '1', CourseName: 'Safe food',Price:'10'} }}">
                   <Button type="submit" variant="primary">
                     Buy $10
                   </Button>{" "}
-                </form>
+                </Link>
                 <Button variant="secondary"> + Add to wishlist</Button>
               </div>
             </Card.Body>
@@ -82,11 +93,11 @@ const CardComponent = () => {
                 utensils before and after handling food.
               </Card.Text>
               <div className="CardBodyButtons">
-                <form action="/create-checkout-session" method="POST">
+                <Link to="/checkoutform1">
                   <Button type="submit" variant="primary">
                     Buy $10
                   </Button>{" "}
-                </form>
+                </Link>
                 <Button variant="secondary"> + Add to wishlist</Button>
               </div>
             </Card.Body>
@@ -110,11 +121,11 @@ const CardComponent = () => {
                 food.
               </Card.Text>
               <div className="CardBodyButtons">
-                <form action="/create-checkout-session" method="POST">
+                <Link to="/checkoutform1">
                   <Button type="submit" variant="primary">
                     Buy $10
                   </Button>{" "}
-                </form>
+                </Link>
                 <Button variant="secondary"> + Add to wishlist</Button>
               </div>
             </Card.Body>

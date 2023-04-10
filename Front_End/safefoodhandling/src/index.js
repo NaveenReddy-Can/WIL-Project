@@ -30,9 +30,9 @@ root.render(
     <div className='MainBody'>
       <App />
 
-      <Footer />
 
-    </div>
+
+    </div>  <Footer />
   </Auth0Provider>
 
 );

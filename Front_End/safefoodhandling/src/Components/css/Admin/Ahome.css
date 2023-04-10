@@ -1,9 +1,10 @@
 .list-group1{
 color: black;
 font-weight: 700;
-float: left;
+float: left; overflow-x: scroll;
 }
 .Mainclass{
     float: left;
-    width: 1600px;
+    width: 1200px;
+   
 }

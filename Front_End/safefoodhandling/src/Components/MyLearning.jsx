@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from "react";
+
 import {
   Container,
   Row,
@@ -9,8 +11,23 @@ import {
   Card,
 } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
+import CourseModule3 from "./Courses/CoursesModule3";
+import CourseModule2 from "./Courses/CourseModule2";
+import CourseModule1 from "./CourseModule1";
+import CourseModule4 from "./Courses/CourseModule4";
 
 const Mylearning = () => {
+  const [showComponent1, setShowComponent1] = useState(false);
+  const [showComponent2, setShowComponent2] = useState(false);
+
+  const handleButtonClick1 = () => {
+    window.open("/cm2", "_blank");
+  };
+
+  const handleButtonClick2 = () => {
+    window.open("/cm3", "_blank");
+  };
+
   const { user, isAuthenticated } = useAuth0();
   const { loginWithRedirect } = useAuth0();
   const { logout } = useAuth0();
@@ -18,23 +35,24 @@ const Mylearning = () => {
     isAuthenticated && (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <div className="container-fluid">
-            <Dropdown>
-              <Dropdown.Toggle
-                variant="secondary"
-                id="dropdown-basic"
-                className="ml-auto"
-              >
-                Menu
-              </Dropdown.Toggle>
+          <Dropdown style={{ position: "absolute", right: 120 }}>
+            <Dropdown.Toggle
+              variant="warning"
+              id="dropdown-basic"
+              className="ml-auto"
+            >
+              Menu
+            </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                <Dropdown.Item href="#">Wishlist</Dropdown.Item>
-                <Dropdown.Item href="#">My Certificates</Dropdown.Item>
-                <Dropdown.Item href="#">My Completed Courses</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </div>
+            <Dropdown.Menu>
+              <Dropdown.Item href="#">Wishlist</Dropdown.Item>
+              <Dropdown.Item href="#">My Certificates</Dropdown.Item>
+              <Dropdown.Item href="#">My Completed Courses</Dropdown.Item>
+              <Dropdown.Item href="/uploadblob">
+                Upload A blob file
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </nav>
         <Container>
           <Row>
@@ -48,17 +66,25 @@ const Mylearning = () => {
                 <Card.Img
                   variant="top"
                   src="https://wilproject.blob.core.windows.net/images/foodstorage1.jpg"
-                  style={{ height: "200px" }}
+                  style={{ height: "400px" }}
                 />
-                <Card.Body>
-                  <Card.Title>Course Title</Card.Title>
-                  <Card.Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    sit amet enim ac dolor dictum ultrices ac in mauris. Donec
-                    nec sapien a turpis dictum faucibus eu sed sapien.
+                <Card.Body style={{ color: "black" }}>
+                  <Card.Title style={{ fontWeight: 800, color: "#543254" }}>
+                    Safe food handling
+                  </Card.Title>
+                  <Card.Text style={{ fontWeight: 300 }}>
+                    Safe food handling is important to prevent illness. It
+                    involves proper food storage, cooking, and cleaning to avoid
+                    harmful bacteria. Wash hands, cook meat to recommended
+                    temperatures, and refrigerate leftovers promptly. Follow
+                    these steps to keep food safe.
                   </Card.Text>
-                  <ProgressBar now={50} label={`50%`} />
-                  <Button variant="primary">Start Course</Button>{" "}
+                  <ProgressBar now={50} label={`50%`} variant="secondary" />
+                  <br></br>
+                  <Button onClick={handleButtonClick1} variant="success">
+                    Start Course
+                  </Button>{" "}
+                  {showComponent1 && <CourseModule2 />}
                 </Card.Body>
               </Card>
             </Col>
@@ -67,36 +93,26 @@ const Mylearning = () => {
                 <Card.Img
                   variant="top"
                   src="https://wilproject.blob.core.windows.net/images/foodstorage1.jpg"
-                  style={{ height: "200px" }}
+                  style={{ height: "400px" }}
                 />
-                <Card.Body>
-                  <Card.Title>Course Title</Card.Title>
-                  <Card.Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    sit amet enim ac dolor dictum ultrices ac in mauris. Donec
-                    nec sapien a turpis dictum faucibus eu sed sapien.
+                <Card.Body style={{ color: "black" }}>
+                  <Card.Title style={{ fontWeight: 800, color: "#543254" }}>
+                    {" "}
+                    Food safety
+                  </Card.Title>
+                  <Card.Text style={{ fontWeight: 300 }}>
+                    Food safety involves practices to prevent contamination and
+                    spoilage of food, and to reduce the risk of foodborne
+                    illness. By following guidelines such as proper storage,
+                    handling, and cooking, we can ensure that the food we eat is
+                    safe and healthy.
                   </Card.Text>
-                  <ProgressBar now={25} label={`25%`} />
-                  <Button variant="primary">Start Course</Button>{" "}
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card>
-                <Card.Img
-                  variant="top"
-                  src="https://wilproject.blob.core.windows.net/images/foodstorage1.jpg"
-                  style={{ height: "200px" }}
-                />
-                <Card.Body>
-                  <Card.Title>Course Title</Card.Title>
-                  <Card.Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    sit amet enim ac dolor dictum ultrices ac in mauris. Donec
-                    nec sapien a turpis dictum faucibus eu sed sapien.
-                  </Card.Text>
-                  <ProgressBar now={75} label={`75%`} />
-                  <Button variant="primary">Start Course</Button>{" "}
+                  <ProgressBar now={25} label={`25%`} variant="secondary" />
+                  <br></br>
+                  <Button onClick={handleButtonClick2} variant="success">
+                    Start Course
+                  </Button>{" "}
+                  {showComponent2 && <CourseModule3 />}
                 </Card.Body>
               </Card>
             </Col>
